@@ -1,7 +1,15 @@
 import React from "react";
+import { Route, Routes, Navigate } from "react-router-dom";
+import Services from "./Pages/Services/Services";
+import Landing from "./Pages/Landing/Landing";
 
 function App() {
-  return <div>Hello MariTime</div>;
+  return (
+    <Routes>
+      <Route exact path="/" element={<Landing />} />
+      <Route exact path="/services" element={<Services />} />
+    </Routes>
+  );
 }
 
 export default App;
