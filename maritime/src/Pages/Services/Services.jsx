@@ -1,29 +1,29 @@
 import React from "react";
 import "./Services.css";
+import Carousel from "./Carousel";
 
 function Services() {
   return (
-    <div>
+    <div className="services-page">
       <div className="row">
         <div className="col-lg-2 col-md-2 side-functions">
           <div className="buttons-background">
-            <button class="button-17" role="button">
+            <button className="button-17" role="button">
               Map
             </button>
-            <button class="button-17" role="button">
+            <button className="button-17" role="button">
               Route
             </button>
-            <button class="button-17" role="button">
+            <button className="button-17" role="button">
               Freight
             </button>
-            <button class="button-17" role="button">
+            <button className="button-17" role="button">
               Weather
             </button>
-
-            <button class="button-17" role="button">
+            <button className="button-17" role="button">
               Ship Details
             </button>
-            <button class="button-17" role="button">
+            <button className="button-17" role="button">
               Optimization
             </button>
           </div>
@@ -36,12 +36,16 @@ function Services() {
                   <p>Box - 1</p>
                 </div>
                 <div className="box-2">
-                  <p>Box-2</p>
+                  <p>Box - 2</p>
                 </div>
               </div>
             </div>
             <div className="col-lg-7 col-md-7 traingle-segment">
               <div className="triangle-box"></div>
+              <Carousel />
+              <div className="bot">
+                
+              </div>
             </div>
           </div>
         </div>
