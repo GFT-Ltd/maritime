@@ -6,45 +6,62 @@ function Services() {
   return (
     <div className="services-page">
       <div className="row">
-        <div className="col-lg-2 col-md-2 side-functions">
-          <div className="buttons-background">
-            <button className="button-17" role="button">
-              Map
-            </button>
-            <button className="button-17" role="button">
-              Route
-            </button>
-            <button className="button-17" role="button">
-              Freight
-            </button>
-            <button className="button-17" role="button">
-              Weather
-            </button>
-            <button className="button-17" role="button">
-              Ship Details
-            </button>
-            <button className="button-17" role="button">
-              Optimization
-            </button>
-          </div>
-        </div>
-        <div className="col-lg-10 col-md-2 right-segment">
-          <div className="row">
-            <div className="col-lg-5 col-md-5 square-box-segment">
-              <div className="data-box">
-                <div className="box-1">
-                  <p>Box - 1</p>
-                </div>
-                <div className="box-2">
-                  <p>Box - 2</p>
-                </div>
+        <div className="col-lg-2 col-md-2 col-sm-12 services-functions">
+          <div className="services-functions-buttons">
+            <div className="row">
+              <div className="col-lg-12 col-md-12 col-4 mb-3">
+                <button className="button-4" role="button">
+                  Map
+                </button>
+              </div>
+              <div className="col-lg-12 col-md-12 col-4 mb-3">
+                <button className="button-4" role="button">
+                  Route
+                </button>
+              </div>
+              <div className="col-lg-12 col-md-12 col-4 mb-3">
+                <button className="button-4" role="button">
+                  Freight
+                </button>
+              </div>
+              <div className="col-lg-12  col-md-12 col-4 mb-3">
+                <button className="button-4" role="button">
+                  Weather
+                </button>
+              </div>
+              <div className="col-lg-12 col-md-12 col-4 mb-3">
+                <button className="button-4" role="button">
+                  Optimization
+                </button>
+              </div>
+              <div className="col-lg-12 col-md-12 col-4 mb-3">
+                <button className="button-4" role="button">
+                  Ship Details
+                </button>
               </div>
             </div>
-            <div className="col-lg-7 col-md-7 traingle-segment">
-              <div className="triangle-box"></div>
-              <Carousel />
-              <div className="bot">
+          </div>
+        </div>
+        <div className="col-lg-10 col-md-10 col-sm-12 right-container">
+          <div className="row">
+            <div className="col-lg-6 col-sm-6 col-12 data-container">
+              <div className="data-square">
+                <div className="data-heading">
+                  <h5>Data Information</h5>
+                </div>
+                <div className="data-information">
+                  <p>Information for the data</p>
+                </div>
+              </div>
+              {/* <div className="triangle">
                 
+              </div> */}
+            </div>
+            <div className="col-lg-6 col-sm-6 col-12 image-container">
+              <div className="triangle">
+                <div className="carousel-container">
+                  <Carousel />
+                </div>
               </div>
             </div>
           </div>
