@@ -7,3 +7,7 @@
   height: 5rem;
   width: 5rem;
 }
+
+.bot-modal:hover{
+    cursor: pointer;
+}
