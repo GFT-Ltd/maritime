@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Services from "./Pages/Services/Services";
 import Landing from "./Pages/Landing/Landing";
 

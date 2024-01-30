@@ -1,6 +1,7 @@
 import React from "react";
 import "./Services.css";
 import Carousel from "./Carousel";
+import Bot from "./Bot/Bot";
 
 function Services() {
   return (
@@ -10,34 +11,22 @@ function Services() {
           <div className="services-functions-buttons">
             <div className="row">
               <div className="col-lg-12 col-md-12 col-4 mb-3">
-                <button className="button-4" role="button">
-                  Map
-                </button>
+                <button className="button-4">Map</button>
               </div>
               <div className="col-lg-12 col-md-12 col-4 mb-3">
-                <button className="button-4" role="button">
-                  Route
-                </button>
+                <button className="button-4">Route</button>
               </div>
               <div className="col-lg-12 col-md-12 col-4 mb-3">
-                <button className="button-4" role="button">
-                  Freight
-                </button>
+                <button className="button-4">Freight</button>
               </div>
               <div className="col-lg-12  col-md-12 col-4 mb-3">
-                <button className="button-4" role="button">
-                  Weather
-                </button>
+                <button className="button-4">Weather</button>
               </div>
               <div className="col-lg-12 col-md-12 col-4 mb-3">
-                <button className="button-4" role="button">
-                  Optimization
-                </button>
+                <button className="button-4">Optimization</button>
               </div>
               <div className="col-lg-12 col-md-12 col-4 mb-3">
-                <button className="button-4" role="button">
-                  Ship Details
-                </button>
+                <button className="button-4">Ship Details</button>
               </div>
             </div>
           </div>
@@ -63,6 +52,14 @@ function Services() {
                   <Carousel />
                 </div>
               </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-12 bot-container">
+              {/* <div className="col-lg-1 col-sm-1 col-12 bot-container">
+                <Bot />
+              </div> */}
+              <Bot />
             </div>
           </div>
         </div>

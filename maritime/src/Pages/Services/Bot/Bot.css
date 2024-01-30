@@ -1,0 +1,9 @@
+.bot-modal {
+  position: absolute;
+  right: 2%;
+}
+
+.bot-image {
+  height: 5rem;
+  width: 5rem;
+}
