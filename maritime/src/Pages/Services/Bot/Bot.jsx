@@ -106,10 +106,10 @@ function Bot() {
             <div className="modal-content">
               <h1 className="modal-title fs-5">Maritime Bot</h1>
               <div className="modal-body">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Hello! Welcome</h5>
-                    <h6 class="card-subtitle mb-2 text-body-secondary">
+                <div className="card">
+                  <div className="card-body">
+                    <h5 className="card-title">Hello! Welcome</h5>
+                    <h6 className="card-subtitle mb-2 text-body-secondary">
                       How can I assist you today ?
                     </h6>
                     {/* <p class="card-text">
@@ -117,13 +117,13 @@ function Bot() {
                       make up the bulk of the card's content.
                     </p> */}
 
-                    <div class="alert alert-dark" role="alert">
+                    <div className="alert alert-dark" role="alert">
                       Routes
                     </div>
-                    <div class="alert alert-dark" role="alert">
+                    <div className="alert alert-dark" role="alert">
                       Track my order status
                     </div>
-                    <div class="alert alert-dark" role="alert">
+                    <div className="alert alert-dark" role="alert">
                       My package is delayed
                     </div>
                   </div>
@@ -131,7 +131,7 @@ function Bot() {
                 <div className="input-box">
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="formGroupExampleInput"
                     placeholder="Enter your query"
                   />
