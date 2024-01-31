@@ -3,49 +3,51 @@
 // import BotImage from "../../../Assets/bot.png";
 
 // function Bot() {
+//   const openModal = () => {
+//     const modal = document.getElementById("exampleModal");
+//     const modalInstance = new window.bootstrap.Modal(modal);
+//     modalInstance.show();
+//   };
+
 //   return (
 //     <div className="bot-modal">
-//       <img src={BotImage} className="bot-image" alt="bot-logo" />
+//       <img
+//         src={BotImage}
+//         className="bot-image"
+//         alt="bot-logo"
+//         onClick={openModal}
+//       />
 
-//       <button
-//         type="button"
-//         class="btn btn-primary"
-//         data-bs-toggle="modal"
-//         data-bs-target="#exampleModal"
-//       >
-//         Launch demo modal
-//       </button>
 //       <div
-//         class="modal fade"
+//         className="modal fade"
 //         id="exampleModal"
-//         tabindex="-1"
+//         tabIndex="-1"
 //         aria-labelledby="exampleModalLabel"
 //         aria-hidden="true"
 //       >
-//         <div class="modal-dialog">
-//           <div class="modal-content">
-//             <div class="modal-header">
-//               <h1 class="modal-title fs-5" id="exampleModalLabel">
-//                 Modal title
+//         <div className="modal-dialog modal-dialog-centered">
+//           <div className="modal-content">
+//             <div className="modal-header">
+//               <h1 className="modal-title fs-5" id="exampleModalLabel">
+//                 Marine GPT
 //               </h1>
 //               <button
 //                 type="button"
-//                 class="btn-close"
+//                 className="btn-close"
 //                 data-bs-dismiss="modal"
 //                 aria-label="Close"
 //               ></button>
 //             </div>
-//             <div class="modal-body">...</div>
-//             <div class="modal-footer">
+//             <div className="modal-body">
+//               Write
+//             </div>
+//             <div className="modal-footer">
 //               <button
 //                 type="button"
-//                 class="btn btn-secondary"
+//                 className="btn btn-secondary"
 //                 data-bs-dismiss="modal"
 //               >
 //                 Close
-//               </button>
-//               <button type="button" class="btn btn-primary">
-//                 Save changes
 //               </button>
 //             </div>
 //           </div>
@@ -57,17 +59,36 @@
 
 // export default Bot;
 
-
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Bot.css";
 import BotImage from "../../../Assets/bot.png";
 
 function Bot() {
+  const [isModalOpen, setModalOpen] = useState(false);
+
   const openModal = () => {
-    const modal = document.getElementById("exampleModal");
-    const modalInstance = new window.bootstrap.Modal(modal);
-    modalInstance.show();
+    setModalOpen(true);
+    document.body.style.overflow = "hidden";
   };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    document.body.style.overflow = "";
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape" && isModalOpen) {
+        closeModal();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isModalOpen]);
 
   return (
     <div className="bot-modal">
@@ -78,41 +99,53 @@ function Bot() {
         onClick={openModal}
       />
 
-      <div
-        className="modal fade"
-        id="exampleModal"
-        tabIndex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h1 className="modal-title fs-5" id="exampleModalLabel">
-                Marine GPT
-              </h1>
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div className="modal-body">
-              Write 
-            </div>
-            <div className="modal-footer">
-              <button
-                type="button"
-                className="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
+      {isModalOpen && (
+        <>
+          <div className="backdrop" onClick={closeModal}></div>
+          <div className="custom-modal">
+            <div className="modal-content">
+              <h1 className="modal-title fs-5">Maritime Bot</h1>
+              <div className="modal-body">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Hello! Welcome</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">
+                      How can I assist you today ?
+                    </h6>
+                    {/* <p class="card-text">
+                      Some quick example text to build on the card title and
+                      make up the bulk of the card's content.
+                    </p> */}
+
+                    <div class="alert alert-dark" role="alert">
+                      Routes
+                    </div>
+                    <div class="alert alert-dark" role="alert">
+                      Track my order status
+                    </div>
+                    <div class="alert alert-dark" role="alert">
+                      My package is delayed
+                    </div>
+                  </div>
+                </div>
+                <div className="input-box">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="formGroupExampleInput"
+                    placeholder="Enter your query"
+                  />
+                </div>
+              </div>
+              <div className="modal-footer">
+                <button className="btn btn-secondary" onClick={closeModal}>
+                  Close
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+        </>
+      )}
     </div>
   );
 }

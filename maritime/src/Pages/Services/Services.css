@@ -141,7 +141,7 @@
 
 .data-heading {
   margin: 5%;
-  margin-left: 0.7rem;
+  margin-left: 0.8rem;
   margin-top: 1.2rem;
   padding: 3%;
   height: 3rem;
@@ -152,7 +152,7 @@
 
 .data-information {
   margin: 5%;
-  margin-left: 0.7rem;
+  margin-left: 0.8rem;
   margin-top: 1.2rem;
   padding: 3%;
   height: 13.5rem;
@@ -172,7 +172,7 @@
     background-color: #fff;
     border-radius: 1rem;
   }
-  
+
   .data-information {
     margin: 5%;
     margin-left: 0.7rem;
@@ -183,7 +183,6 @@
     background-color: #fff;
     border-radius: 1rem;
   }
-  
 
   .data-square {
     position: absolute;
@@ -192,10 +191,9 @@
     transform: translate(-50%, -50%);
     height: 15rem;
     width: 15rem;
-    background-color: red;
+    background-color: #3998ff;
   }
 }
-
 
 .triangle {
   position: absolute;
@@ -216,7 +214,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 30rem; /* Width should match the triangle's width */
-  height: 20rem; /* Height should match half of the triangle's height */
+  height: 25rem; /* Height should match half of the triangle's height */
   /* clip-path: polygon(0 0, 100% 0, 50% 100%); */
   clip-path: polygon(100% 0, 100% 100%, 0 50%);
   overflow: hidden;
@@ -224,7 +222,8 @@
 }
 
 .carousel-image {
-  width: 100%;
+  /* width: 100%; */
+  width: 40rem;
   height: auto;
 }
 
@@ -238,7 +237,7 @@
     width: 0;
     height: 0;
     border-top: 10rem solid transparent;
-    border-right: 23rem solid #333;
+    border-right: 23rem solid #fff;
     border-bottom: 10rem solid transparent;
   }
 
@@ -256,16 +255,16 @@
   }
 }
 
-.bot-container{
+.bot-container {
   height: 20vh;
   background-color: #67cbeb;
   display: relative;
 }
 
 @media (max-width: 600px) {
-  .bot-container{
+  .bot-container {
     height: 20vh;
-    background-color:  #67cbeb;
+    background-color: #67cbeb;
     display: relative;
   }
 }
