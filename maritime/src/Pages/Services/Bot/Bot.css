@@ -48,6 +48,9 @@
     bottom: 3rem;
     right: 3rem;
   }
+  .bot-modal {
+    bottom: 1rem;
+  }
 }
 
 .modal-title {
