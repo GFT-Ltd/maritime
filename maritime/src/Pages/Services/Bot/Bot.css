@@ -34,7 +34,7 @@
   position: fixed;
   bottom: 6rem;
   right: 6rem;
-  background-color: #fff;
+  background-color: #dee2ff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 999;
   padding: 20px;
@@ -56,7 +56,7 @@
 .modal-title {
   /* margin-bottom: 1rem; */
   text-transform: uppercase;
-  background-color: #3998ff;
+  background-color: #8e9aaf;
   color: #fff;
   padding: 1rem;
   border-top-right-radius: 1rem;
@@ -73,6 +73,7 @@
 
 .card {
   width: 15rem;
+  background-color: #dee2ff;
 }
 
 .input-box {
