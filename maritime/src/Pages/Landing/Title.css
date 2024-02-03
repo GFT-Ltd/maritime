@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
+
+.title-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.waviy {
+  margin-top: 5%;
+  position: relative;
+}
+.waviy span {
+  position: relative;
+  display: inline-block;
+  font-size: 4rem;
+  /* color: #22223b; */
+  color: #1E97FF;
+  font-family: 'Bad Script', cursive;
+  font-weight: bold;
+}
+
