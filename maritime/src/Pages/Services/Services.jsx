@@ -1,9 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Services.css";
 import Carousel from "./Carousel";
 import Bot from "./Bot/Bot";
 
 function Services() {
+
+  const navigate = useNavigate();
+
+  const navigateToRoutes = () => {
+    navigate("/routes");
+  };
   return (
     <div className="services-page">
       <div className="row">
@@ -11,22 +18,22 @@ function Services() {
           <div className="services-functions-buttons">
             <div className="row">
               <div className="col-lg-12 col-md-12 col-4 mb-4">
-                <button className="button-4">Map</button>
-              </div>
-              <div className="col-lg-12 col-md-12 col-4 mb-4">
-                <button className="button-4">Route</button>
+                <button className="button-4" onClick={navigateToRoutes}>Route</button>
               </div>
               <div className="col-lg-12 col-md-12 col-4 mb-4">
                 <button className="button-4">Freight</button>
               </div>
-              <div className="col-lg-12  col-md-12 col-4 mb-4">
+              <div className="col-lg-12 col-md-12 col-4 mb-4">
                 <button className="button-4">Weather</button>
               </div>
-              <div className="col-lg-12 col-md-12 col-4 mb-4">
-                <button className="button-4">Optimization</button>
+              <div className="col-lg-12  col-md-12 col-4 mb-4">
+                <button className="button-4">Vessel Tracking</button>
               </div>
               <div className="col-lg-12 col-md-12 col-4 mb-4">
                 <button className="button-4">Ship Details</button>
+              </div>
+              <div className="col-lg-12 col-md-12 col-4 mb-4">
+                <button className="button-4">Optimization</button>
               </div>
             </div>
           </div>
