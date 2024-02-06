@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bad+Script&display=swap");
 
-.title-div{
+.title-div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,8 +15,7 @@
   display: inline-block;
   font-size: 4rem;
   /* color: #22223b; */
-  color: #1E97FF;
-  font-family: 'Bad Script', cursive;
+  color: #1e97ff;
+  font-family: "Bad Script", cursive;
   font-weight: bold;
 }
-

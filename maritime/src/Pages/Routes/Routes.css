@@ -205,3 +205,15 @@
     color: #41a0f2;
   }
 }
+
+@media (min-width: 1300px) {
+  .result {
+    top: 48%;
+  }
+}
+
+@media (max-width: 600px) {
+  .result {
+    top: 79%;
+  }
+}

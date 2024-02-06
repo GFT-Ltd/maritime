@@ -5,7 +5,6 @@ const Title = () => {
   return (
     <div className="title-div">
       <div class="waviy">
-        
         <span>Great Future Technologies Ltd.</span>
       </div>
     </div>

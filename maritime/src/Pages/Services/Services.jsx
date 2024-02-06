@@ -5,7 +5,6 @@ import Carousel from "./Carousel";
 import Bot from "./Bot/Bot";
 
 function Services() {
-
   const navigate = useNavigate();
 
   const navigateToRoutes = () => {
@@ -18,7 +17,9 @@ function Services() {
           <div className="services-functions-buttons">
             <div className="row">
               <div className="col-lg-12 col-md-12 col-4 mb-4">
-                <button className="button-4" onClick={navigateToRoutes}>Route</button>
+                <button className="button-4" onClick={navigateToRoutes}>
+                  Route
+                </button>
               </div>
               <div className="col-lg-12 col-md-12 col-4 mb-4">
                 <button className="button-4">Freight</button>
