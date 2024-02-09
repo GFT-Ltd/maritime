@@ -217,3 +217,17 @@
     top: 79%;
   }
 }
+
+.map-container {
+  height: 100vh;
+  padding: 2rem;
+}
+
+.input-box-container {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.route-name {
+  margin-bottom: 1rem;
+}
