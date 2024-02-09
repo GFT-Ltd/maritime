@@ -1,0 +1,91 @@
+.bot-modal {
+  position: absolute;
+  right: 2%;
+}
+
+.bot-modal:hover {
+  cursor: pointer;
+}
+.bot-modal {
+  /* position: fixed; */
+  /* bottom: 20px;
+  right: 20px; */
+  z-index: 999;
+}
+
+.bot-image {
+  height: 5rem;
+  width: 5rem;
+  cursor: pointer;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+  backdrop-filter: blur(3px); /* Adjust the blur intensity as needed */
+  z-index: 998; /* Ensure the backdrop is behind the modal but above the content */
+}
+
+.custom-modal {
+  position: fixed;
+  bottom: 6rem;
+  right: 6rem;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  padding: 20px;
+  border-radius: 1.2rem;
+  padding: 0;
+}
+
+@media (max-width: 600px) {
+  .custom-modal {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+  }
+  .bot-modal {
+    bottom: 1rem;
+  }
+}
+
+.modal-title {
+  /* margin-bottom: 1rem; */
+  text-transform: uppercase;
+  background-color: #0085f8;
+  color: #fff;
+  padding: 1rem;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+}
+
+.modal-body {
+  padding: 1rem;
+}
+
+.modal-footer {
+  padding: 1rem;
+}
+
+.card {
+  width: 15rem;
+  background-color: #fff;
+}
+
+.input-box {
+  margin-top: 1rem;
+  width: 15rem;
+}
+
+.alert {
+  margin: 0;
+  padding: 1%;
+  padding-left: 2%;
+  width: fit-content;
+  padding-right: 2%;
+  margin-bottom: 3%;
+}
