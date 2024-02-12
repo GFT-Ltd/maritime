@@ -1,5 +1,6 @@
 .services-page {
   overflow: hidden; /*we can scroll without the elements being static */
+  overflow-x: hidden;
 }
 
 .button-4 {
@@ -84,89 +85,29 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-@media (max-width: 600px) {
-  .services-functions-buttons {
-    position: absolute;
-    top: 10%;
-    transform: translateY(-50%);
-    padding-right: 5%;
-  }
-  .services-functions {
-    background-color: #0085f8;
-    height: 20vh;
-  }
-  .button-4 {
-    width: 7rem;
-  }
-  .right-container {
-    /* background-color: #9a8c98; */
-    background-color: transparent;
-  }
-}
-
 .right-container {
   height: 100vh;
   /* background-color: #9a8c98; */
   background-color: transparent;
 }
+
 .data-container {
   /* background-color: #9a8c98; */
   height: 100vh;
   background-color: transparent;
 }
 
-.image-container {
-  /* background-color: #9a8c98; */
-  background-color: transparent;
-  height: 100vh;
-}
-
-.data-container {
-  display: relative;
-}
-
-.data-square {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  height: 25rem;
-  width: 25rem;
-  background-color: #0085f8;
-  border-radius: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-
-@media (max-width: 600px) {
-  .data-container {
-    height: 50vh;
-  }
-
-  .image-container {
-    height: 50vh;
-  }
-
-  .data-square {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 20rem;
-    width: 20rem;
-    margin-right: 5rem;
-    /* background-color: red; */
-  }
+.bot-container {
+  height: 20vh;
+  background-color: #fff;
 }
 
 .data-heading {
   margin: 5%;
   margin-left: 0.6rem;
-  margin-top: 0.5rem;
+  margin-top: 0.1rem;
   padding: 3%;
-  height: 2.5rem;
+  height: 2rem;
   width: 23.8rem;
   color: #fff;
   background-color: transparent;
@@ -175,11 +116,11 @@
 
 .data-information {
   margin: 5%;
-  margin-top: -0.5rem;
+  margin-top: 0.5rem;
   margin-left: 0.3rem;
   padding: 3%;
-  height: 16rem;
-  width: 19.4rem;
+  height: 18.6rem;
+  width: 21.5rem;
   background-color: #f2e9e4;
   border-radius: 1rem;
 }
@@ -187,22 +128,75 @@
 .data-square {
   position: absolute;
   top: 50%;
-  left: 48%;
+  left: 40%;
   transform: translate(-50%, -50%);
-  height: 20rem;
-  width: 20rem;
-  background-color: #00a6fb;
-  margin-right: 32rem;
+  height: 22rem;
+  width: 22rem;
+  background-color: #0085f8;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.carousel-container {
+  position: absolute;
+  top: 50%;
+  margin-left: 17rem;
+  transform: translate(-50%, -50%);
+  width: 45rem;
+  height: 40rem;
+  clip-path: polygon(87% 0, 100% 0, 100% 100%, 87% 100%, 0 50%);
+  overflow: hidden;
+}
+
+.carousel-image {
+  width: 44.5rem;
+  height: 40rem;
 }
 
 @media (max-width: 600px) {
+  .services-functions-buttons {
+    position: absolute;
+    top: 10%;
+    transform: translateY(-50%);
+    padding-right: 5%;
+  }
+
+  .services-functions {
+    background-color: #0085f8;
+    height: 20vh;
+  }
+
+  .button-4 {
+    width: 7rem;
+  }
+
+  .right-container {
+    background-color: transparent;
+  }
+
+  .data-square {
+    position: absolute;
+    top: 88%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    height: 20rem;
+    width: 20rem;
+    background-color: #0085f8;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+
   .data-heading {
     margin: 5%;
     margin-left: 0.3rem;
-    margin-top: 0.5rem;
+    margin-top: 0.1rem;
     padding: 3%;
     height: 3rem;
-    width: 18.5rem;
+    width: 19.5rem;
     background-color: transparent;
     border-radius: 1rem;
   }
@@ -210,117 +204,35 @@
   .data-information {
     margin: 5%;
     margin-left: 0.3rem;
-    margin-top: -1rem;
+    margin-top: -1.2rem;
     padding: 3%;
-    height: 16.2rem;
-    width: 19.4rem;
+    height: 16.7rem;
+    width: 19.2rem;
     background-color: #fff;
     border-radius: 1rem;
   }
-}
-
-.triangle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin-left: 20rem;
-  width: 0;
-  height: 0;
-  border-top: 15rem solid transparent;
-  border-right: 30rem solid #4a4e69;
-  border-bottom: 15rem solid transparent;
-}
-
-.carousel-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 30rem; /* Width should match the triangle's width */
-  height: 25rem; /* Height should match half of the triangle's height */
-  /* clip-path: polygon(0 0, 100% 0, 50% 100%); */
-  clip-path: polygon(100% 0, 100% 100%, 0 50%);
-  overflow: hidden;
-  margin-left: 15rem;
-}
-
-.carousel-image {
-  /* width: 100%; */
-  width: 40rem;
-  height: auto;
-}
-
-@media (max-width: 600px) {
-  .triangle {
-    position: absolute;
-    top: 95%;
-    left: -30%;
-    transform: translate(-50%, -50%);
-    /* margin-left: 20rem; */
-    width: 0;
-    height: 0;
-    border-top: 10rem solid transparent;
-    border-right: 23rem solid #4a4e69;
-    border-bottom: 10rem solid transparent;
-  }
 
   .carousel-container {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 45%;
+    left: 05%;
+    margin-left: 13rem;
     transform: translate(-50%, -50%);
-    width: 26rem; /* Width should match the triangle's width */
-    height: 16rem; /* Height should match half of the triangle's height */
-    /* clip-path: polygon(0 0, 100% 0, 50% 100%); */
-    clip-path: polygon(100% 0, 100% 100%, 0 50%);
+    width: 21rem; /* Width should match the triangle's width */
+    height: 20rem; /* Height should match half of the triangle's height */
+    clip-path: polygon(86% 0, 100% 0, 100% 100%, 86% 100%, 0 50%);
     overflow: hidden;
-    margin-left: 10rem;
-  }
-}
-
-@media (min-width: 1300px) {
-  .triangle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin-left: 20rem;
-    width: 0;
-    height: 0;
-    border-top: 17rem solid transparent;
-    border-right: 34rem solid #4a4e69;
-    border-bottom: 17rem solid transparent;
-  }
-
-  .carousel-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 34rem; /* Width should match the triangle's width */
-    height: 28rem; /* Height should match half of the triangle's height */
-    /* clip-path: polygon(0 0, 100% 0, 50% 100%); */
-    clip-path: polygon(100% 0, 100% 100%, 0 50%);
-    overflow: hidden;
-    margin-left: 17rem;
   }
 
   .carousel-image {
     /* width: 100%; */
-    width: 42rem;
-    height: auto;
+    width: 21rem;
+    height: 20rem;
   }
-}
 
-.bot-container {
-  height: 20vh;
-  background-color: #fff;
-}
-
-@media (max-width: 600px) {
   .bot-container {
-    height: 20vh;
+    top: 120%;
+    height: 5vh;
     background-color: #fff;
     position: absolute;
     right: 0;
