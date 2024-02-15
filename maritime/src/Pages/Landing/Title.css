@@ -7,7 +7,7 @@
 }
 
 .waviy {
-  margin-top: 5%;
+  margin-top: 4%;
   position: relative;
 }
 .waviy span {
@@ -15,7 +15,10 @@
   display: inline-block;
   font-size: 4rem;
   /* color: #22223b; */
-  color: #1e97ff;
+  color: black;
   font-family: "Bad Script", cursive;
   font-weight: bold;
+  /* background-color: #ddd; */
+  padding: 10px;
+  border-radius: 0.5rem;
 }
