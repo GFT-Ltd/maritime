@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Services from "./Pages/Services/Services";
 import Landing from "./Pages/Landing/Landing";
 import Routes_page from "./Pages/Routes/Routes";
+// import "./App.css";
 
 function App() {
   return (

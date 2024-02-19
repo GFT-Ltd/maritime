@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Bad+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap");
 
 .title-div {
   display: flex;
@@ -7,13 +8,13 @@
 }
 
 .waviy {
-  margin-top: 4%;
+  margin-top: 2%;
   position: relative;
 }
 .waviy span {
   position: relative;
   display: inline-block;
-  font-size: 4rem;
+  font-size: 6rem;
   /* color: #22223b; */
   color: black;
   font-family: "Bad Script", cursive;
@@ -21,4 +22,7 @@
   /* background-color: #ddd; */
   padding: 10px;
   border-radius: 0.5rem;
+  font-family: "Tangerine", cursive;
+  font-weight: 900;
+  font-style: normal;
 }

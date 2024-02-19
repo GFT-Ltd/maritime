@@ -536,6 +536,7 @@ import Bot from "../Services/Bot/Bot";
 import { FaLocationDot } from "react-icons/fa6";
 import RouteDetails from "./RouteDetails";
 import axios from "axios";
+import Navbar from "../Components/Navbar";
 
 function Routes() {
   const [selectedSourcePort, setSelectedSourcePort] = useState(null);
@@ -631,178 +632,181 @@ function Routes() {
   }, [selectedSourcePort, selectedDestinationPort]);
 
   return (
-    <div className="routes-page">
-      <div className="row input-box-container">
-        <div className="col-6">
-          <div className="row">
-            <div className="col-12 source-search-box">
-              <div className="card source-destination-cards">
-                <div className="card-body">
-                  <span className="location-icon">
-                    <FaLocationDot />
-                  </span>
+    <>
+      <div className="routes-page">
+        <Navbar />
+        <div className="row input-box-container">
+          <div className="col-6">
+            <div className="row">
+              <div className="col-12 source-search-box">
+                <div className="card source-destination-cards">
+                  <div className="card-body">
+                    <span className="location-icon">
+                      <FaLocationDot />
+                    </span>
 
-                  <input
-                    type="text"
-                    placeholder="Enter Source"
-                    value={searchTermSource}
-                    onChange={handleSearchTermSourceChange}
-                    onKeyPress={(event) =>
-                      handleEnterPress(
-                        event,
-                        setSelectedSourcePort,
-                        searchTermSource,
-                        "source"
-                      )
-                    }
-                    className="search-input-box"
-                  />
-                  <select
-                    id="source"
-                    value={selectedSourcePort || ""}
-                    onChange={handleSourcePortChange}
-                    className="dropdown"
-                  >
-                    <option value="" disabled>
-                      Select source port
-                    </option>
-                    {filteredSourcePorts.map((portCode) => (
-                      <option key={portCode} value={portCode}>
-                        {portsData[portCode].name}
+                    <input
+                      type="text"
+                      placeholder="Enter Source"
+                      value={searchTermSource}
+                      onChange={handleSearchTermSourceChange}
+                      onKeyPress={(event) =>
+                        handleEnterPress(
+                          event,
+                          setSelectedSourcePort,
+                          searchTermSource,
+                          "source"
+                        )
+                      }
+                      className="search-input-box"
+                    />
+                    <select
+                      id="source"
+                      value={selectedSourcePort || ""}
+                      onChange={handleSourcePortChange}
+                      className="dropdown"
+                    >
+                      <option value="" disabled>
+                        Select source port
                       </option>
-                    ))}
-                  </select>
-                  <h5 className="card-title">
-                    Port Name :{" "}
-                    {selectedSourcePort
-                      ? portsData[selectedSourcePort].name
-                      : ""}
-                  </h5>
-                  <h6 className="card-title mb-2">
-                    Country :{" "}
-                    {selectedSourcePort
-                      ? portsData[selectedSourcePort].country
-                      : ""}
-                  </h6>
-                  <h6 className="card-title mb-2 ">
-                    Timezone :{" "}
-                    {selectedSourcePort
-                      ? portsData[selectedSourcePort].timezone
-                      : ""}
-                  </h6>
-                  {/* <h6 className="card-title mb-2 ">Coordinates :-</h6> */}
-                  <p className="card-subtitle mb-1 text-body-secondary">
-                    Latitude :{" "}
-                    {selectedSourcePort
-                      ? portsData[selectedSourcePort].coordinates[1]
-                      : ""}
-                  </p>
-                  <p className="card-subtitle text-body-secondary lat-log-p">
-                    Longitude :{" "}
-                    {selectedSourcePort
-                      ? portsData[selectedSourcePort].coordinates[0]
-                      : ""}
-                  </p>
+                      {filteredSourcePorts.map((portCode) => (
+                        <option key={portCode} value={portCode}>
+                          {portsData[portCode].name}
+                        </option>
+                      ))}
+                    </select>
+                    <h5 className="card-title">
+                      Port Name :{" "}
+                      {selectedSourcePort
+                        ? portsData[selectedSourcePort].name
+                        : ""}
+                    </h5>
+                    <h6 className="card-title mb-2">
+                      Country :{" "}
+                      {selectedSourcePort
+                        ? portsData[selectedSourcePort].country
+                        : ""}
+                    </h6>
+                    <h6 className="card-title mb-2 ">
+                      Timezone :{" "}
+                      {selectedSourcePort
+                        ? portsData[selectedSourcePort].timezone
+                        : ""}
+                    </h6>
+                    {/* <h6 className="card-title mb-2 ">Coordinates :-</h6> */}
+                    <p className="card-subtitle mb-1 text-body-secondary">
+                      Latitude :{" "}
+                      {selectedSourcePort
+                        ? portsData[selectedSourcePort].coordinates[1]
+                        : ""}
+                    </p>
+                    <p className="card-subtitle text-body-secondary lat-log-p">
+                      Longitude :{" "}
+                      {selectedSourcePort
+                        ? portsData[selectedSourcePort].coordinates[0]
+                        : ""}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col-12 destination-search-box">
-              <div className="card source-destination-cards">
-                <div className="card-body">
-                  <span className="location-icon2">
-                    <FaLocationDot />
-                  </span>
-                  <input
-                    type="text"
-                    placeholder="Enter Destination"
-                    value={searchTermDestination}
-                    onChange={handleSearchTermDestinationChange}
-                    onKeyPress={(event) =>
-                      handleEnterPress(
-                        event,
-                        setSelectedDestinationPort,
-                        searchTermDestination,
-                        "destination"
-                      )
-                    }
-                    className="search-input-box"
-                  />
-                  <select
-                    id="destination"
-                    value={selectedDestinationPort || ""}
-                    onChange={handleDestinationPortChange}
-                    className="dropdown"
-                  >
-                    <option value="" disabled>
-                      Select destination port
-                    </option>
-                    {filteredDestinationPorts.map((portCode) => (
-                      <option key={portCode} value={portCode}>
-                        {portsData[portCode].name}
+              <div className="col-12 destination-search-box">
+                <div className="card source-destination-cards">
+                  <div className="card-body">
+                    <span className="location-icon2">
+                      <FaLocationDot />
+                    </span>
+                    <input
+                      type="text"
+                      placeholder="Enter Destination"
+                      value={searchTermDestination}
+                      onChange={handleSearchTermDestinationChange}
+                      onKeyPress={(event) =>
+                        handleEnterPress(
+                          event,
+                          setSelectedDestinationPort,
+                          searchTermDestination,
+                          "destination"
+                        )
+                      }
+                      className="search-input-box"
+                    />
+                    <select
+                      id="destination"
+                      value={selectedDestinationPort || ""}
+                      onChange={handleDestinationPortChange}
+                      className="dropdown"
+                    >
+                      <option value="" disabled>
+                        Select destination port
                       </option>
-                    ))}
-                  </select>
+                      {filteredDestinationPorts.map((portCode) => (
+                        <option key={portCode} value={portCode}>
+                          {portsData[portCode].name}
+                        </option>
+                      ))}
+                    </select>
 
-                  <h5 className="card-title">
-                    Port Name :{" "}
-                    {selectedDestinationPort
-                      ? portsData[selectedDestinationPort].name
-                      : ""}
-                  </h5>
-                  <h6 className="card-title mb-2">
-                    Country :{" "}
-                    {selectedDestinationPort
-                      ? portsData[selectedDestinationPort].country
-                      : ""}
-                  </h6>
-                  <h6 className="card-title mb-2 ">
-                    Timezone :{" "}
-                    {selectedDestinationPort
-                      ? portsData[selectedDestinationPort].timezone
-                      : ""}
-                  </h6>
-                  {/* <h6 className="card-title mb-2 ">Coordinates :-</h6> */}
-                  <p className="card-subtitle mb-1 text-body-secondary">
-                    Latitude :{" "}
-                    {selectedDestinationPort
-                      ? portsData[selectedDestinationPort].coordinates[1]
-                      : ""}
-                  </p>
-                  <p className="card-subtitle text-body-secondary lat-log-p">
-                    Longitude :{" "}
-                    {selectedDestinationPort
-                      ? portsData[selectedDestinationPort].coordinates[0]
-                      : ""}
-                  </p>
+                    <h5 className="card-title">
+                      Port Name :{" "}
+                      {selectedDestinationPort
+                        ? portsData[selectedDestinationPort].name
+                        : ""}
+                    </h5>
+                    <h6 className="card-title mb-2">
+                      Country :{" "}
+                      {selectedDestinationPort
+                        ? portsData[selectedDestinationPort].country
+                        : ""}
+                    </h6>
+                    <h6 className="card-title mb-2 ">
+                      Timezone :{" "}
+                      {selectedDestinationPort
+                        ? portsData[selectedDestinationPort].timezone
+                        : ""}
+                    </h6>
+                    {/* <h6 className="card-title mb-2 ">Coordinates :-</h6> */}
+                    <p className="card-subtitle mb-1 text-body-secondary">
+                      Latitude :{" "}
+                      {selectedDestinationPort
+                        ? portsData[selectedDestinationPort].coordinates[1]
+                        : ""}
+                    </p>
+                    <p className="card-subtitle text-body-secondary lat-log-p">
+                      Longitude :{" "}
+                      {selectedDestinationPort
+                        ? portsData[selectedDestinationPort].coordinates[0]
+                        : ""}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="col-6">
-          <p className="result" onClick={fetchRouteDetails}>
-            Get Results
-          </p>
-          <div className="get-results"></div>
-          <div className="bot-routes-section">
-            <Bot />
+          <div className="col-6">
+            <p className="result" onClick={fetchRouteDetails}>
+              Get Results
+            </p>
+            <div className="get-results"></div>
+            <div className="bot-routes-section">
+              <Bot />
+            </div>
           </div>
-        </div>
-        {/* <div className="col-12">
+          {/* <div className="col-12">
         <iframe id="sea-distance-iframe" style={{marginTop: "34rem", height:"100%"}} frameborder="0" src="http://ports.com/sea-route/" width="100%" />
         </div> */}
+        </div>
+        <div className="map-container">
+          <h1 className="route-name">
+            Route from{" "}
+            {selectedSourcePort ? portsData[selectedSourcePort].name : ""} to{" "}
+            {selectedDestinationPort
+              ? portsData[selectedDestinationPort].name
+              : ""}
+          </h1>
+          <RouteDetails routeDetails={routeDetails} />
+        </div>
       </div>
-      <div className="map-container">
-        <h1 className="route-name">
-          Route from{" "}
-          {selectedSourcePort ? portsData[selectedSourcePort].name : ""} to{" "}
-          {selectedDestinationPort
-            ? portsData[selectedDestinationPort].name
-            : ""}
-        </h1>
-        <RouteDetails routeDetails={routeDetails} />
-      </div>
-    </div>
+    </>
   );
 }
 

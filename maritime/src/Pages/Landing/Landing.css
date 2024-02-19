@@ -121,6 +121,16 @@
   background-repeat: no-repeat;
 }
 
+@media (max-width: 600px) {
+  .landing-page {
+    margin: 0;
+    padding: 0;
+    background-image: url("../../Assets/8.jpg");
+    background-size: 1600px 1000px;
+    background-repeat: no-repeat;
+  }
+}
+
 .waves-section {
   position: relative;
   width: 100%;
@@ -214,9 +224,17 @@
 
 @media (max-width: 600px) {
   .boat-image {
-    height: 15rem;
+    height: 20rem;
     width: 30rem;
-    top: 37rem;
+    top: 25rem;
+  }
+  @keyframes animate-boat {
+    0% {
+      left: 0px;
+    }
+    100% {
+      left: 0px;
+    }
   }
 }
 
