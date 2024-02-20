@@ -1,0 +1,45 @@
+.navbar-logo {
+  width: 3rem;
+  height: 3rem;
+}
+
+.navbar {
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 600px) {
+  .navbar-collapse {
+    background-color: rgba(128, 128, 128, 0.5);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: 0;
+  }
+}
+
+.navbar-nav span {
+  font-size: 2rem;
+}
+
+.navbar-collapse span {
+  font-size: 2rem;
+  color: #003554;
+}
+
+@media (max-width: 600px) {
+  .navbar-nav span {
+    display: flex;
+  }
+  .navbar-collapse span {
+    display: flex;
+  }
+}
+
+.home-button {
+  color: #778da9;
+}
+
+.home-button:hover {
+  color: #415a77;
+}

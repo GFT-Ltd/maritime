@@ -158,14 +158,14 @@
 @media (max-width: 600px) {
   .services-functions-buttons {
     position: absolute;
-    top: 10%;
+    top: 15%;
     transform: translateY(-50%);
     padding-right: 5%;
   }
 
   .services-functions {
     background-color: #0085f8;
-    height: 20vh;
+    height: 25vh;
   }
 
   .button-4 {

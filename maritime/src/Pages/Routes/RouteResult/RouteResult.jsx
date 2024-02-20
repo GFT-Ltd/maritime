@@ -4,7 +4,7 @@ import React from "react";
 import { useLocation } from "react-router-dom"; // Import useLocation
 import RouteDetails from "../RouteDetails/RouteDetails";
 import "./RouteResult.css";
-import Navbar from "../../Components/Navbar/Navbar";
+import NavbarTwo from "../../Components/Navbar/NavbarTwo";
 
 function RouteResult() {
   const location = useLocation(); // Get location
@@ -16,7 +16,7 @@ function RouteResult() {
 
   return (
     <div>
-      <Navbar />
+      <NavbarTwo />
       <div className="ports-title">
         <h5>
           {source || ""} to {destination || ""}

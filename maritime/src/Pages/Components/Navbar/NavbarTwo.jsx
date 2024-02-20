@@ -1,18 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../../Assets/Navbar-Logo.png";
-import "./Navbar.css";
+import "./NavbarTwo.css";
+import { HiHome } from "react-icons/hi2";
+import { IoMdArrowRoundBack } from "react-icons/io";
 
-function Navbar() {
+function NavbarTwo() {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light">
-        {" "}
-        {/* Added navbar-light class */}
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
-            <img className="navbar-logo" src={Logo} alt="logo" />
-          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -27,25 +24,10 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
               <Link className="nav-link active" to="/">
-                Home
+                <span className="home-button">
+                  <HiHome />
+                </span>
               </Link>
-              <Link className="nav-link active" to="/services">
-                Services
-              </Link>
-              <Link className="nav-link active" to="/#">
-                About Us
-              </Link>
-              <Link className="nav-link active" to="/#">
-                Careers
-              </Link>
-            </div>
-            <div className="d-flex ms-auto flex-row-reverse">
-              <button className="sign-in-button">
-                Join Us
-                <div className="arrow-wrapper">
-                  <div className="arrow"></div>
-                </div>
-              </button>
             </div>
           </div>
         </div>
@@ -54,4 +36,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default NavbarTwo;
