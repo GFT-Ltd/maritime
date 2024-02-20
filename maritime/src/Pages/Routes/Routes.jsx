@@ -534,8 +534,8 @@ import { useNavigate } from "react-router-dom";
 import portsData from "../../Assets/ports.json";
 import "./Routes.css";
 import Bot from "../Components/Bot/Bot";
-// import { FaLocationDot } from "react-icons/fa6";
-import { MdLocationOn } from "react-icons/md";
+import { FaLocationDot } from "react-icons/fa6";
+// import { MdLocationOn } from "react-icons/md";
 import RouteDetails from "./RouteDetails/RouteDetails";
 import axios from "axios";
 import NavbarTwo from "../Components/Navbar/NavbarTwo";
@@ -684,7 +684,7 @@ function Routes() {
                 <div className="card source-destination-cards">
                   <div className="card-body">
                     <span className="location-icon">
-                      <MdLocationOn />
+                      <FaLocationDot />
                     </span>
 
                     <input
@@ -755,7 +755,7 @@ function Routes() {
                 <div className="card source-destination-cards">
                   <div className="card-body">
                     <span className="location-icon2">
-                      <MdLocationOn />
+                      <FaLocationDot />
                     </span>
                     <input
                       type="text"
