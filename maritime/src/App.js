@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Services from "./Pages/Services/Services";
 import Landing from "./Pages/Landing/Landing";
 import Routes_page from "./Pages/Routes/Routes";
+import RouteResult from "./Pages/Routes/RouteResult/RouteResult";
 // import "./App.css";
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <Route exact path="/" element={<Landing />} />
       <Route exact path="/services" element={<Services />} />
       <Route path="/routes" element={<Routes_page />} />
+      <Route path="/route-results" element={<RouteResult />} />
     </Routes>
   );
 }

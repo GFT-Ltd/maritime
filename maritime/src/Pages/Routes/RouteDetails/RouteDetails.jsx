@@ -110,7 +110,7 @@
 // export default RouteDetails;
 
 import React, { useState } from "react";
-import RouteMap from "./RouteMap";
+import RouteMap from "../RouteMap";
 import "./RouteDetails.css";
 
 const RouteDetails = ({ routeDetails }) => {

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Logo from "../../Assets/Navbar-Logo.png";
+import Logo from "../../../Assets/Navbar-Logo.png";
 import "./Navbar.css";
 
 function Navbar() {
@@ -29,12 +29,23 @@ function Navbar() {
               <Link className="nav-link active" to="/">
                 Home
               </Link>
-              <Link className="nav-link" to="/services">
+              <Link className="nav-link active" to="/services">
                 Services
               </Link>
-              <Link className="nav-link" to="/about-us">
+              <Link className="nav-link active" to="/#">
                 About Us
               </Link>
+              <Link className="nav-link active" to="/#">
+                Careers
+              </Link>
+            </div>
+            <div className="d-flex ms-auto flex-row-reverse">
+              <button className="sign-in-button">
+                Sign In
+                <div className="arrow-wrapper">
+                  <div className="arrow"></div>
+                </div>
+              </button>
             </div>
           </div>
         </div>

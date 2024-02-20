@@ -530,13 +530,14 @@
 // export default Routes;
 
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import portsData from "../../Assets/ports.json";
 import "./Routes.css";
-import Bot from "../Services/Bot/Bot";
+import Bot from "../Components/Bot/Bot";
 import { FaLocationDot } from "react-icons/fa6";
-import RouteDetails from "./RouteDetails";
+import RouteDetails from "./RouteDetails/RouteDetails";
 import axios from "axios";
-import Navbar from "../Components/Navbar";
+import Navbar from "../Components/Navbar/Navbar";
 
 function Routes() {
   const [selectedSourcePort, setSelectedSourcePort] = useState(null);
@@ -546,6 +547,8 @@ function Routes() {
   const [routeDetails, setRouteDetails] = useState(null);
   const [filteredSourcePorts, setFilteredSourcePorts] = useState([]);
   const [filteredDestinationPorts, setFilteredDestinationPorts] = useState([]);
+
+  const navigate = useNavigate();
 
   const handleSourcePortChange = (event) => {
     setSelectedSourcePort(event.target.value);
@@ -596,6 +599,37 @@ function Routes() {
     }
   };
 
+  // const fetchRouteDetails = () => {
+  //   if (selectedSourcePort && selectedDestinationPort) {
+  //     const sourceCoordinates = `${portsData[selectedSourcePort].coordinates[0]},${portsData[selectedSourcePort].coordinates[1]}`;
+  //     const destinationCoordinates = `${portsData[selectedDestinationPort].coordinates[0]},${portsData[selectedDestinationPort].coordinates[1]}`;
+
+  //     const options = {
+  //       method: "GET",
+  //       url: `https://api.searoutes.com/route/v2/sea/${sourceCoordinates};${destinationCoordinates}/plan`,
+  //       params: {
+  //         continuousCoordinates: "true",
+  //         allowIceAreas: "false",
+  //         avoidHRA: "false",
+  //         avoidSeca: "false",
+  //       },
+  //       headers: {
+  //         accept: "application/json",
+  //         "x-api-key": "SbiGd7GJdR4eYDw35YwQz2i7W0UiRF0b4IJAg7Bh",
+  //       },
+  //     };
+
+  //     axios
+  //       .request(options)
+  //       .then(function (response) {
+  //         setRouteDetails(response.data);
+  //       })
+  //       .catch(function (error) {
+  //         console.error(error);
+  //       });
+  //   }
+  // };
+
   const fetchRouteDetails = () => {
     if (selectedSourcePort && selectedDestinationPort) {
       const sourceCoordinates = `${portsData[selectedSourcePort].coordinates[0]},${portsData[selectedSourcePort].coordinates[1]}`;
@@ -612,14 +646,21 @@ function Routes() {
         },
         headers: {
           accept: "application/json",
-          "x-api-key": "SbiGd7GJdR4eYDw35YwQz2i7W0UiRF0b4IJAg7Bh",
+          "x-api-key": "nirontDGPFBmQJYrSAtZ6NgqZOt20cy7ReufSPM3",
         },
       };
 
       axios
         .request(options)
         .then(function (response) {
-          setRouteDetails(response.data);
+          // Instead of setting routeDetails state here, navigate to RouteResult component with route details
+          navigate("/route-results", {
+            state: {
+              routeDetails: response.data,
+              source: portsData[selectedSourcePort].name,
+              destination: portsData[selectedDestinationPort].name,
+            },
+          });
         })
         .catch(function (error) {
           console.error(error);
@@ -795,7 +836,7 @@ function Routes() {
         <iframe id="sea-distance-iframe" style={{marginTop: "34rem", height:"100%"}} frameborder="0" src="http://ports.com/sea-route/" width="100%" />
         </div> */}
         </div>
-        <div className="map-container">
+        {/* <div className="map-container">
           <h1 className="route-name">
             Route from{" "}
             {selectedSourcePort ? portsData[selectedSourcePort].name : ""} to{" "}
@@ -804,7 +845,7 @@ function Routes() {
               : ""}
           </h1>
           <RouteDetails routeDetails={routeDetails} />
-        </div>
+        </div> */}
       </div>
     </>
   );

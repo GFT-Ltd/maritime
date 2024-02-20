@@ -2,8 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Services.css";
 import Carousel from "./Carousel";
-import Bot from "./Bot/Bot";
-import Navbar from "../Components/Navbar";
+import Bot from "../Components/Bot/Bot";
 
 function Services() {
   const navigate = useNavigate();
@@ -34,6 +33,9 @@ function Services() {
                 </div>
                 <div className="col-lg-12 col-md-12 col-4 mb-4">
                   <button className="button-4">Ship Details</button>
+                </div>
+                <div className="col-lg-12 col-md-12 col-4 mb-4">
+                  <button className="button-4">Company Info.</button>
                 </div>
                 <div className="col-lg-12 col-md-12 col-4 mb-4">
                   <button className="button-4">Optimization</button>

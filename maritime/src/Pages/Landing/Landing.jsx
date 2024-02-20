@@ -2,7 +2,7 @@ import React from "react";
 import "./Landing.css";
 import boatImage from "../../Assets/cargoship.png";
 import Title from "./Title";
-import Navbar from "../Components/Navbar";
+import Navbar from "../Components/Navbar/Navbar.jsx";
 
 function Landing() {
   return (

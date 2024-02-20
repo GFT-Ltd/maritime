@@ -1,0 +1,13 @@
+.map-container {
+  /* background-color: green; */
+  /* padding: 2%; */
+  padding: 1%;
+}
+
+/* .ports-title{
+    display: flex;
+} */
+
+.ports-title h5 {
+  text-align: center;
+}
