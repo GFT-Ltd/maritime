@@ -24,3 +24,23 @@
   font-weight: 900;
   font-style: normal;
 }
+
+
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .waviy span {
+    font-size: 4rem;
+    padding: 5px;
+  }
+}
+
+/* Media query for even smaller screens */
+@media (max-width: 480px) {
+  .waviy span {
+    font-size: 3rem;
+    padding: 5px;
+  }
+}
+
+

@@ -126,7 +126,7 @@
     margin: 0;
     padding: 0;
     background-image: url("../../Assets/8.jpg");
-    background-size: 1600px 1000px;
+    background-size: 1600px 900px;
     background-repeat: no-repeat;
   }
 }
@@ -135,28 +135,7 @@
   position: relative;
   width: 100%;
   height: 100vh;
-  /* background-color: #3F5BE6; */
-  /* background-color: rgb(104, 102, 220); */
-  /* background-color: #fff; */
   overflow: hidden;
-}
-
-.waves-section .wave {
-  /* position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background: url("../../Assets/wave-image.png");
-  background-size: 1000px 100px; */
-}
-
-.waves-section .wave.wave1 {
-  /* animation: animate 30s linear infinite;
-  z-index: 1000;
-  opacity: 1;
-  animation-delay: 0s;
-  bottom: 0; */
 }
 
 @keyframes animate {
@@ -224,16 +203,21 @@
 
 @media (max-width: 600px) {
   .boat-image {
-    height: 20rem;
+    height: 30rem;
     width: 30rem;
-    top: 25rem;
+    top: 10rem;
+    animation: animate-boat 5s linear infinite; /* Adjust the duration (3s) as needed */
   }
+
   @keyframes animate-boat {
     0% {
-      left: 0px;
+      left: -100%;
+    }
+    50% {
+      left: 100%;
     }
     100% {
-      left: 0px;
+      left: -100%;
     }
   }
 }
