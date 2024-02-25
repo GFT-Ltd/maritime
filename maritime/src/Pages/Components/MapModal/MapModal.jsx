@@ -246,6 +246,13 @@ function MapModal({ show, handleClose, onCoordinatesCapture }) {
   const showHideClassName = show ? "modal display-block" : "modal display-none";
 
   useEffect(() => {
+    const handleEscapeKeyPress = (event) => {
+      if (event.keyCode === 27) {
+        handleClose();
+      }
+    };
+
+    document.addEventListener("keydown", handleEscapeKeyPress);
     const map = new Map({
       target: "map",
       layers: [

@@ -3,7 +3,7 @@
 }
 
 .input-section {
-  height: 120vh;
+  height: 110vh;
   /* background-color: rgb(83, 73, 222); */
   background-color: #003554;
   display: grid;
@@ -12,7 +12,7 @@
 }
 
 .calender-section {
-  height: 120vh;
+  height: 110vh;
   background-color: #dcdcdd;
   padding-right: 1.9%;
 }

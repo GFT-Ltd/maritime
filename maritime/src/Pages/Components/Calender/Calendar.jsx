@@ -703,9 +703,7 @@ const Calendar = ({ forecastData }) => {
     for (let i = 1; i <= calendarDays; i++) {
       dates.push(
         <div className="number-item" key={i} onClick={(e) => selectDate(i, e)}>
-          <a className="dateNumber" href="#">
-            {i}
-          </a>
+          <a className="dateNumber">{i}</a>
         </div>
       );
     }
@@ -726,9 +724,7 @@ const Calendar = ({ forecastData }) => {
       <div className="calendar-inner">
         <div className="calendar-controls">
           <div className="calendar-prev">
-            <a href="#" onClick={navigateToPreviousMonth}>
-              &lt;
-            </a>
+            <a onClick={navigateToPreviousMonth}>&lt;</a>
           </div>
           <div className="calendar-year-month">
             <div className="calendar-month-label">{displayMonth()}</div>
@@ -736,9 +732,7 @@ const Calendar = ({ forecastData }) => {
             <div className="calendar-year-label">{displayYear()}</div>
           </div>
           <div className="calendar-next">
-            <a href="#" onClick={navigateToNextMonth}>
-              &gt;
-            </a>
+            <a onClick={navigateToNextMonth}>&gt;</a>
           </div>
         </div>
         <div className="calendar-today-date">

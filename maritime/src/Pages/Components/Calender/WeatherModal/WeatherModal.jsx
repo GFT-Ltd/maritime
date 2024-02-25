@@ -74,9 +74,10 @@ const WeatherModal = ({ isOpen, onClose, data }) => {
     <div className="weather-modal-overlay" onClick={handleClose}>
       <div className="weather-modal" onClick={(e) => e.stopPropagation()}>
         <span className="close" onClick={handleClose}>
-          &times;
+          {/* &times; */}
+          close
         </span>
-        <div className="modal-content">
+        <div className="weather-modal-content">
           <div className="row">
             <div className="col-lg-4 col-md-6 col-12">
               <h2>{data.date}</h2>
@@ -137,7 +138,7 @@ const WeatherModal = ({ isOpen, onClose, data }) => {
                       <p>Wind Direction: {selectedHour.winddirDegree}°</p>
                     </div>
                     <div className="right-column">
-                      <p>
+                      <p className="weather-desc">
                         Weather Description: {selectedHour.weatherDesc[0].value}
                       </p>
                       <p>

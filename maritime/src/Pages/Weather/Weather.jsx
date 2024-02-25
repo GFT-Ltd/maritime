@@ -457,7 +457,7 @@ function Weather() {
 
   const handleCoordinatesCapture = (latitude, longitude) => {
     setCapturedCoordinates({ latitude, longitude });
-    // fetchWeatherHistoryData(latitude, longitude);
+    fetchWeatherHistoryData(latitude, longitude);
     fetchForecastWeatherData(latitude, longitude);
   };
 
@@ -511,29 +511,58 @@ function Weather() {
     }
   }, [weatherHistoryData]);
 
+  // const fetchWeatherHistoryData = (latitude, longitude) => {
+  //   setIsHistoryLoading(true);
+  //   // Calculate the date 60 days before the current date
+  //   const currentDate = new Date();
+  //   const pastDate = new Date(currentDate);
+  //   pastDate.setDate(currentDate.getDate() - 60);
+
+  //   // Format the past date as YYYY-MM-DD
+  //   const formattedDate = pastDate.toISOString().split("T")[0];
+
+  //   // Fetch weather history data using the captured coordinates and past date
+  //   const apiKey = "526e6cf6febd4002943183548242202";
+  //   const apiUrl = `http://api.worldweatheronline.com/premium/v1/past-marine.ashx?key=${apiKey}&format=json&q=${latitude},${longitude}&date=${formattedDate}`;
+
+  //   fetch(apiUrl)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setWeatherHistoryData(data);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching weather history data:", error);
+  //     });
+  // };
+
   const fetchWeatherHistoryData = (latitude, longitude) => {
-    isHistoryLoading(true);
-    // Calculate the date 60 days before the current date
-    const currentDate = new Date();
-    const pastDate = new Date(currentDate);
-    pastDate.setDate(currentDate.getDate() - 60);
-
-    // Format the past date as YYYY-MM-DD
-    const formattedDate = pastDate.toISOString().split("T")[0];
-
-    // Fetch weather history data using the captured coordinates and past date
+    setIsHistoryLoading(true);
+    
+    // Calculate the start date (1 month ago) and end date (today)
+    const endDate = new Date();
+    const startDate = new Date();
+    startDate.setMonth(startDate.getMonth() - 1); // Set start date to 1 month ago
+  
+    // Format the dates as YYYY-MM-DD
+    const formattedStartDate = startDate.toISOString().split("T")[0];
+    const formattedEndDate = endDate.toISOString().split("T")[0];
+  
+    // Fetch weather history data using the captured coordinates, start date, and end date
     const apiKey = "526e6cf6febd4002943183548242202";
-    const apiUrl = `http://api.worldweatheronline.com/premium/v1/past-marine.ashx?key=${apiKey}&format=json&q=${latitude},${longitude}&date=${formattedDate}`;
-
+    const apiUrl = `http://api.worldweatheronline.com/premium/v1/past-marine.ashx?key=${apiKey}&format=json&q=${latitude},${longitude}&date=${formattedStartDate}&enddate=${formattedEndDate}`;
+  
     fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => {
         setWeatherHistoryData(data);
+        setIsHistoryLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching weather history data:", error);
+        setIsHistoryLoading(false);
       });
   };
+  
 
   const fetchForecastWeatherData = (latitude, longitude) => {
     setIsForecastLoading(true);

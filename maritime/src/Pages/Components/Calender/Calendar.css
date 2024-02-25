@@ -33,6 +33,12 @@
   border-radius: var(--calendar-border-radius);
 }
 
+@media (max-width: 600px) {
+  .calendar {
+    margin-top: 10%;
+  }
+}
+
 .calendar-inner {
   padding: 10px 10px;
 }
@@ -164,4 +170,12 @@
 .calendar .calendar-inner .calendar-body .next-dates:hover {
   border: 1px solid transparent;
   pointer-events: none;
+}
+
+.dateNumber {
+  cursor: pointer;
+}
+
+.calendar-controls a {
+  cursor: pointer;
 }
