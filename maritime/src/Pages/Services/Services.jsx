@@ -10,6 +10,10 @@ function Services() {
   const navigateToRoutes = () => {
     navigate("/routes");
   };
+
+  const navigateToWeather = () => {
+    navigate("/weather");
+  };
   return (
     <>
       <div className="services-page">
@@ -26,7 +30,9 @@ function Services() {
                   <button className="button-4">Freight</button>
                 </div>
                 <div className="col-lg-12 col-md-12 col-4 mb-4">
-                  <button className="button-4">Weather</button>
+                  <button className="button-4" onClick={navigateToWeather}>
+                    Weather
+                  </button>
                 </div>
                 <div className="col-lg-12  col-md-12 col-4 mb-4">
                   <button className="button-4">Vessel Tracking</button>

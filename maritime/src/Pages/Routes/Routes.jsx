@@ -826,7 +826,7 @@ function Routes() {
           </div>
           <div className="col-6">
             <p className="result" onClick={fetchRouteDetails}>
-              Get Results
+              Go
             </p>
             <div className="get-results"></div>
             <div className="bot-routes-section">
