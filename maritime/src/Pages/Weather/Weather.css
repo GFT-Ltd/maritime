@@ -3,28 +3,17 @@
 }
 
 .input-section {
-<<<<<<< HEAD
-  height: 110vh;
-  /* background-color: rgb(83, 73, 222); */
-  background-color: #003554;
-=======
   height: 120vh;
   background-color: #000000;
   /* background-color: #003554; */
->>>>>>> c369eb0f37bda2c9a38d724c2c1a717ee5e9a0b6
   display: grid;
   justify-content: center;
   align-content: start;
 }
 
 .calender-section {
-<<<<<<< HEAD
-  height: 110vh;
-  background-color: #dcdcdd;
-=======
   height: 120vh;
   background-color: #d3d3d3;
->>>>>>> c369eb0f37bda2c9a38d724c2c1a717ee5e9a0b6
   padding-right: 1.9%;
 }
 
