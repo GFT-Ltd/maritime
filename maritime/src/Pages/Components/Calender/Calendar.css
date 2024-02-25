@@ -2,9 +2,9 @@
 
 :root {
   --calendar-bg-color: #f4f4f4;
-  --calendar-font-color: #044357;
+  --calendar-font-color: #000;
   --weekdays-border-bottom-color: #404040;
-  --calendar-date-hover-color: #00A6FB;
+  --calendar-date-hover-color: #00a6fb;
   --calendar-current-date-color: #44a9e4;
   --calendar-today-color: linear-gradient(to bottom, #03a9f4, #2196f3);
   --calendar-today-innerborder-color: transparent;
@@ -13,7 +13,7 @@
   --calendar-border-radius: 16px;
   --calendar-prevnext-date-color: #b5b5b5;
 
-/* 
+  /* 
   --calendar-bg-color: #f4f4f4;
   --calendar-font-color: #000000;
   --weekdays-border-bottom-color: #404040;
@@ -26,7 +26,6 @@
   --calendar-border-radius: 16px;
   --calendar-prevnext-date-color: #b5b5b5; */
 }
-
 
 * {
   padding: 0;
