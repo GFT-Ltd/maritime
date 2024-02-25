@@ -4,8 +4,8 @@
 
 .input-section {
   height: 120vh;
-  /* background-color: rgb(83, 73, 222); */
-  background-color: #003554;
+  background-color: #000000;
+  /* background-color: #003554; */
   display: grid;
   justify-content: center;
   align-content: start;
@@ -13,15 +13,17 @@
 
 .calender-section {
   height: 120vh;
-  background-color: #dcdcdd;
+  background-color: #d3d3d3;
   padding-right: 1.9%;
 }
 
 @media (max-width: 600px) {
   .input-section {
     height: 50vh;
-    background-color: #003554;
+    background-color: #44a9e4;
+    /* background-color: #051923; */
   }
+  
 }
 
 .container {
@@ -41,6 +43,7 @@
   backdrop-filter: blur(20px);
   border-radius: 0.7rem;
   transition: all ease 0.3s;
+  border-color: #8b8b8b;
 }
 
 .container .box {
@@ -99,7 +102,7 @@
   border: 1px solid #7aa7c7;
   box-shadow: rgba(255, 255, 255, 0.7) 0 1px 0 0 inset;
   box-sizing: border-box;
-  color: #39739d;
+  color: #000000;
   cursor: pointer;
   display: inline-block;
   font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans",
