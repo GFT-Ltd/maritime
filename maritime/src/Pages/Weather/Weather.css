@@ -3,25 +3,38 @@
 }
 
 .input-section {
+<<<<<<< HEAD
   height: 110vh;
   /* background-color: rgb(83, 73, 222); */
   background-color: #003554;
+=======
+  height: 120vh;
+  background-color: #000000;
+  /* background-color: #003554; */
+>>>>>>> c369eb0f37bda2c9a38d724c2c1a717ee5e9a0b6
   display: grid;
   justify-content: center;
   align-content: start;
 }
 
 .calender-section {
+<<<<<<< HEAD
   height: 110vh;
   background-color: #dcdcdd;
+=======
+  height: 120vh;
+  background-color: #d3d3d3;
+>>>>>>> c369eb0f37bda2c9a38d724c2c1a717ee5e9a0b6
   padding-right: 1.9%;
 }
 
 @media (max-width: 600px) {
   .input-section {
     height: 50vh;
-    background-color: #003554;
+    background-color: #44a9e4;
+    /* background-color: #051923; */
   }
+  
 }
 
 .container {
@@ -41,6 +54,7 @@
   backdrop-filter: blur(20px);
   border-radius: 0.7rem;
   transition: all ease 0.3s;
+  border-color: #8b8b8b;
 }
 
 .container .box {
@@ -99,7 +113,7 @@
   border: 1px solid #7aa7c7;
   box-shadow: rgba(255, 255, 255, 0.7) 0 1px 0 0 inset;
   box-sizing: border-box;
-  color: #39739d;
+  color: #000000;
   cursor: pointer;
   display: inline-block;
   font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans",
