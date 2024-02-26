@@ -23,7 +23,11 @@ function NavbarTwo() {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-              <Link className="nav-link active" to="/">
+              <Link
+                className="nav-link active"
+                style={{ paddingTop: 0 }}
+                to="/"
+              >
                 <span className="home-button">
                   <HiHome />
                 </span>

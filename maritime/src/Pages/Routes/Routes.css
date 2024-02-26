@@ -1,9 +1,10 @@
 .routes-page {
-  background-image: url('../../Assets/rimg.jpg');
+  background-image: url("../../Assets/rimg.jpg");
   background-size: cover; /* Ensure full coverage */
   background-position: center; /* Center the image */
   background-repeat: no-repeat;
-  height: 100vh;
+  /* height: 100vh; */
+  overflow: hidden;
 }
 
 .source-destination-cards {
@@ -205,7 +206,7 @@
   .result {
     z-index: 10;
     position: absolute;
-    top: 80%;
+    top: 95%;
     left: 14%;
     transform: translateY(-50%, -50%);
     color: #003554;
