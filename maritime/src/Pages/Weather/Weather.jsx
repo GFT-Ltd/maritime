@@ -784,6 +784,7 @@ function Weather() {
 
   const fetchWeatherHistoryData = (latitude, longitude) => {
     setIsHistoryLoading(true);
+    setForecastWeatherData(null); // Reset forecast data
 
     const endDate = new Date();
     const startDate = new Date();
@@ -930,7 +931,7 @@ function Weather() {
                 </>
               )} */}
 
-              {isHistoryLoading ? (
+              {isHistoryLoading || isForecastLoading ? (
                 <div className="loading-icon">
                   <i className="fa fa-spinner fa-spin"></i> Loading...
                 </div>
@@ -939,15 +940,7 @@ function Weather() {
                   {weatherHistoryData && !forecastWeatherData ? (
                     <HistoryGraph weatherHistoryData={weatherHistoryData} />
                   ) : null}
-                </>
-              )}
-              {isForecastLoading ? (
-                <div className="loading-icon">
-                  <i className="fa fa-spinner fa-spin"></i> Loading...
-                </div>
-              ) : (
-                <>
-                  {forecastWeatherData ? (
+                  {forecastWeatherData && !isHistoryLoading ? (
                     <Calendar forecastData={forecastWeatherData} />
                   ) : null}
                 </>

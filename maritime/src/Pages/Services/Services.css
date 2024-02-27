@@ -1,11 +1,10 @@
-.services-page {
-  overflow: hidden; /*we can scroll without the elements being static */
+/* .services-page {
+  overflow: hidden;
   overflow-x: hidden;
 }
 
 .button-4 {
   appearance: none;
-  /* background-color: #fafbfc; */
   background-color: #fff;
   border: 2px solid #0085f8;
   border-radius: 6px;
@@ -87,12 +86,10 @@
 
 .right-container {
   height: 100vh;
-  /* background-color: #9a8c98; */
   background-color: transparent;
 }
 
 .data-container {
-  /* background-color: #9a8c98; */
   height: 100vh;
   background-color: transparent;
 }
@@ -218,6 +215,245 @@
     left: 05%;
     margin-left: 13rem;
     transform: translate(-50%, -50%);
+    width: 21rem;
+    height: 20rem;
+    clip-path: polygon(86% 0, 100% 0, 100% 100%, 86% 100%, 0 50%);
+    overflow: hidden;
+  }
+
+  .carousel-image {
+    width: 21rem;
+    height: 20rem;
+  }
+
+  .bot-container {
+    top: 120%;
+    height: 5vh;
+    background-color: #fff;
+    position: absolute;
+    right: 0;
+  }
+} */
+
+.services-page {
+  overflow: hidden; /*we can scroll without the elements being static */
+  overflow-x: hidden;
+}
+
+.button-4 {
+  appearance: none;
+  /* background-color: #fafbfc; */
+  background-color: #051923;
+  border: 2px solid #051923;
+  border-radius: 0px;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 40px;
+  list-style: none;
+  border-radius: 5px !important;
+  position: relative;
+  width: 9rem;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: break-word;
+}
+
+.button-4:hover {
+  box-shadow: 0px 0px 15px 0px #7ef9ffbf;
+  text-decoration: none;
+  transition-duration: 0.1s;
+  border-color: #7ef9ffbf;
+  border-radius: 1px;
+}
+
+.button-4:disabled {
+  background-color: #89add1;
+  border-color: rgba(27, 31, 35, 0.15);
+  color: #959da5;
+  cursor: default;
+}
+
+.button-4:active {
+  background-color: #4d5f7a;
+
+  transition: none 0s;
+}
+
+.button-4:focus {
+  outline: 1px transparent;
+}
+
+.button-4:before {
+  display: none;
+}
+
+.button-4:-webkit-details-marker {
+  display: none;
+}
+
+.services-functions {
+  background-color: #051923;
+  height: 120vh;
+  display: relative;
+  box-shadow: #fff;
+  /* box-shadow: #000000 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  z-index: 100;*/
+}
+
+.services-functions-buttons {
+  position: absolute;
+  top: 52.5%;
+  left: 3%;
+  transform: translateY(-50%);
+  margin-left: -1rem;
+}
+
+.right-container {
+  height: 100vh;
+  /* background-color: #9a8c98; */
+  background-color: #003554;
+}
+
+.data-container {
+  /* background-color: #9a8c98; */
+  height: 100vh;
+  background-color: #003554;
+}
+
+.bot-container {
+  height: 20vh;
+  background-color: #003554;
+}
+
+.data-heading {
+  margin: 5%;
+  margin-left: 0.6rem;
+  margin-top: 0.1rem;
+  padding: 3%;
+  height: 2rem;
+  width: 23.8rem;
+  color: #fff;
+  background-color: transparent;
+  border-radius: 1rem;
+}
+
+.data-information {
+  margin: 5%;
+  margin-top: 0.5rem;
+  margin-left: 0.3rem;
+  padding: 3%;
+  height: 18.6rem;
+  width: 21.5rem;
+  background-color: #f2e9e4;
+  border-radius: 1rem;
+}
+
+.data-square {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  height: 22rem;
+  width: 22rem;
+  background-color: #0b0b0b;
+  border-radius: 1rem;
+  box-shadow: #000000 0px 0px 10px, rgba(0, 0, 0, 0.05) 0px -10px 10px,
+    rgba(0, 0, 0, 0.05) 0px 10px 10px, rgba(0, 0, 0, 0.05) -10px 0px 10px,
+    rgba(0, 0, 0, 0.05) 10px 0px 10px;
+}
+
+.carousel-container {
+  position: absolute;
+  top: 50%;
+  margin-left: 17rem;
+  transform: translate(-50%, -50%);
+  width: 45rem;
+  height: 40rem;
+  clip-path: polygon(87% 0, 100% 0, 100% 100%, 87% 100%, 0 50%);
+  overflow: hidden;
+}
+
+.carousel-image {
+  width: 44.5rem;
+  height: 40rem;
+}
+
+@media (max-width: 600px) {
+  .services-functions-buttons {
+    position: absolute;
+    top: 10%;
+    transform: translateY(-50%);
+    padding-right: 5%;
+  }
+
+  .services-functions {
+    background-color: #051923;
+    height: 20vh;
+  }
+
+  .button-4 {
+    width: 7rem;
+  }
+
+  .right-container {
+    background-color: transparent;
+  }
+
+  .data-square {
+    position: absolute;
+    top: 88%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    height: 20rem;
+    width: 20rem;
+    background-color: #000000;
+    border-radius: 1rem;
+    box-shadow: #ffffff 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
+      rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+      rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+
+  .data-heading {
+    margin: 5%;
+    margin-left: 0.3rem;
+    margin-top: 0.1rem;
+    padding: 3%;
+    height: 3rem;
+    width: 19.5rem;
+    background-color: transparent;
+    border-radius: 1rem;
+  }
+
+  .data-information {
+    margin: 5%;
+    margin-left: 0.3rem;
+    margin-top: -1.2rem;
+    padding: 3%;
+    height: 16.7rem;
+    width: 19.2rem;
+    background-color: #fff;
+    border-radius: 1rem;
+  }
+
+  .carousel-container {
+    position: absolute;
+    top: 45%;
+    left: 05%;
+    margin-left: 13rem;
+    transform: translate(-50%, -50%);
     width: 21rem; /* Width should match the triangle's width */
     height: 20rem; /* Height should match half of the triangle's height */
     clip-path: polygon(86% 0, 100% 0, 100% 100%, 86% 100%, 0 50%);
@@ -233,8 +469,14 @@
   .bot-container {
     top: 120%;
     height: 5vh;
-    background-color: #fff;
+    background-color: #003554;
     position: absolute;
     right: 0;
   }
+}
+
+.logo {
+  width: 180px;
+  height: auto;
+  margin-bottom: 20px;
 }
