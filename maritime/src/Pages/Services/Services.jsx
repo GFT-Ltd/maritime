@@ -79,7 +79,7 @@ function Services() {
                 <div className="row">
                   <div
                     className="col-12 bot-container"
-                    style={{ backgroundColor: "#003554" }}
+                    style={{ backgroundColor: "#b5b5b5" }}
                   >
                     {/* <div className="col-lg-1 col-sm-1 col-12 bot-container">
                 <Bot />
