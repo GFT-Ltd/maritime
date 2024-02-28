@@ -1,9 +1,9 @@
 .routes-page {
-  background-image: url("../../Assets/rimg.jpg");
-  background-size: cover; /* Ensure full coverage */
-  background-position: center; /* Center the image */
+  /* background-image: url("../../Assets/rimg.jpg"); */
+  background-image: url("../../Assets//routesGif.gif");
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  /* height: 100vh; */
   overflow: hidden;
 }
 

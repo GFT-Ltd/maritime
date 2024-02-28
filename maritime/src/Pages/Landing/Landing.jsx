@@ -3,6 +3,7 @@ import "./Landing.css";
 import boatImage from "../../Assets/cargoship.png";
 import Title from "./Title";
 import Navbar from "../Components/Navbar/Navbar.jsx";
+import Footer from "../Components/Footer/Footer.jsx";
 
 function Landing() {
   return (
@@ -22,6 +23,7 @@ function Landing() {
           <div className="wave wave4"></div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
