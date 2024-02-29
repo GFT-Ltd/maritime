@@ -4,7 +4,6 @@ import Logo from "../../../Assets/Navbar-Logo.png";
 import "./Navbar.css";
 
 function Navbar() {
-  
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light">
@@ -33,7 +32,7 @@ function Navbar() {
               <Link className="nav-link active" to="/services">
                 Services
               </Link>
-              <Link className="nav-link active" to="/#">
+              <Link className="nav-link active" to="/about">
                 About Us
               </Link>
               <Link className="nav-link active" to="/#">

@@ -17,7 +17,7 @@
 }
 
 .navbar-nav .nav-link::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 2px;
@@ -33,11 +33,6 @@
   visibility: visible;
   transform: scaleX(1);
 }
-
-
-
-
-
 
 .sign-in-button {
   /* --primary-color: #645bff; */
@@ -99,7 +94,6 @@
 .sign-in-button:hover .arrow:before {
   right: 0;
 }
-
 
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {

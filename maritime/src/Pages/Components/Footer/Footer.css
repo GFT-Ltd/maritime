@@ -43,6 +43,7 @@
 
 .btn-footer {
   transition: transform 0.3s ease;
+  border: 0;
 }
 
 .btn-footer:hover {
@@ -52,6 +53,8 @@
 
 .dropdown-menu {
   display: none;
+  border-radius: 0.6rem;
+  padding: 0;
 }
 
 .btn-footer:hover + .dropdown-menu,
@@ -59,16 +62,19 @@
   display: block;
 }
 
-.dropdown-menu li {
+/* .dropdown-menu li {
   padding: 8px 16px;
-}
+} */
 
 .dropdown-menu li a {
   display: block;
   color: #333;
   text-decoration: none;
+  padding: 6% 4%;
 }
 
 .dropdown-menu li a:hover {
-  background-color: #f4f4f4;
+  /* background-color: #f4f4f4; */
+  background-color: #222222;
+  color: #fff;
 }

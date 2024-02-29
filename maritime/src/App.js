@@ -5,6 +5,7 @@ import Landing from "./Pages/Landing/Landing";
 import Routes_page from "./Pages/Routes/Routes";
 import RouteResult from "./Pages/Routes/RouteResult/RouteResult";
 import Weather from "./Pages/Weather/Weather";
+import About from "./Pages/About/About";
 // import "./App.css";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Route path="/routes" element={<Routes_page />} />
       <Route path="/route-results" element={<RouteResult />} />
       <Route path="/weather" element={<Weather />} />
+      <Route path="/about" element={<About />} />
     </Routes>
   );
 }

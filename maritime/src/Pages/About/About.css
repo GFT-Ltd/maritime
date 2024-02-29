@@ -1,0 +1,46 @@
+.abouts-page {
+  overflow: hidden;
+  overflow-x: hidden;
+}
+
+.about-logo-section {
+  background-color: #d3d3d3;
+  padding: 5%;
+  text-align: center;
+}
+.about-logo-image {
+  height: 22rem;
+  width: 22rem;
+}
+
+.about-text-section {
+  background-color: #d3d3d3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5%;
+  text-align: justify;
+}
+
+.about-text {
+  width: 95%;
+}
+
+.about-mission-statement {
+  background-color: black;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5%;
+}
+
+.about-mission-statement p {
+  font-size: 1.1rem;
+}
+
+.about-team-section {
+  padding: 5%;
+  height: 35rem;
+  background-color: #d3d3d3;
+}
