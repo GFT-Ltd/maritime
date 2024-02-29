@@ -1,5 +1,5 @@
 .routes-page {
-  background-image: url("../../Assets/rimg.jpg");
+  background-image: url("../../Assets/rback.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -14,7 +14,7 @@
   /* border: 0.3rem solid #22223b; */
   background-color: #fff;
   border-radius: 1rem;
-  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+  box-shadow: rgba(21, 232, 239, 0.3) 0px 0px 0px 3px;
 }
 
 .source-destination-cards .card-body {
