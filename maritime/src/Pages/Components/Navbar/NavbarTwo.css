@@ -23,6 +23,10 @@
   }
 }
 
+.nav-two{
+  background-color: #fff;
+}
+
 .navbar-nav span {
   font-size: 2rem;
 }

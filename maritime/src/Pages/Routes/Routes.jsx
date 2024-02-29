@@ -675,8 +675,8 @@ function Routes() {
 
   return (
     <>
+      <NavbarTwo />
       <div className="routes-page">
-        <NavbarTwo />
         <div className="row input-box-container">
           <div className="col-6">
             <div className="row">

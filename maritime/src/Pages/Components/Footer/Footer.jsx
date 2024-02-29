@@ -22,6 +22,13 @@ const Footer = () => {
 
     fetchYear();
   }, []);
+
+  const services = [
+    { text: "Routes", link: "/routes" },
+    { text: "Freight", link: "/#" },
+    { text: "Weather", link: "/weather" },
+    // Add more services as needed
+  ];
   return (
     <footer className="footer footer-section ">
       <div className="container">
@@ -39,6 +46,13 @@ const Footer = () => {
                 <Link to="/services" className="btn btn-footer">
                   Services
                 </Link>
+                <ul className="dropdown-menu">
+                  {services.map((service, index) => (
+                    <li key={index}>
+                      <Link to={service.link}>{service.text}</Link>
+                    </li>
+                  ))}
+                </ul>
               </h6>
             </div>
             <div className="col-md-2">

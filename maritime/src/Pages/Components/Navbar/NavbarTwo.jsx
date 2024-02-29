@@ -8,7 +8,7 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 function NavbarTwo() {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light">
+      <nav className="navbar navbar-expand-lg navbar-light nav-two">
         <div className="container-fluid">
           <button
             className="navbar-toggler"
