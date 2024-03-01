@@ -20,8 +20,15 @@
   width: 100%;
 }
 
+@media (max-width: 768px) {
+  .text {
+    padding: 2%;
+  }
+}
+
 .btn-social {
   margin: 0 0.5rem;
+  border: 0px;
 }
 
 .footer-bottom {
