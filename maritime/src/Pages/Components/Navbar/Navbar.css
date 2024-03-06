@@ -5,6 +5,7 @@
 
 .navbar {
   z-index: 10;
+  background: transparent;
 }
 .navbar-nav .nav-link {
   position: relative;

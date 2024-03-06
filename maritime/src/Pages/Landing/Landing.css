@@ -116,12 +116,34 @@
 .landing-page {
   margin: 0;
   padding: 0;
-  background-image: url("../../Assets/8.jpg");
   background-size: 1600px 700px;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */ 
 }
 
-@media (max-width: 600px) {
+video{
+  width: 100%;
+  height: 10%;
+  object-fit: cover;
+  z-index: -1000;
+  margin-top: -15.5rem;
+}
+
+@media (max-width: 600px) 
+{
+  
+  
+  .boat-image {
+  height: 30rem;
+  width: 40rem;
+  z-index: 10;
+  margin-top: -4rem;
+  position: absolute;
+  left: 0px;
+  top: 7rem;
+  animation: animate-boat 15s linear infinite;
+  user-select: none;
+}
+
   .landing-page {
     margin: 0;
     padding: 0;
@@ -129,6 +151,18 @@
     background-size: 1600px 900px;
     background-repeat: no-repeat;
   }
+
+  .boat-image {
+    height: 30rem;
+    width: 30rem;
+    top: 10rem;
+    animation: animate-boat 5s linear infinite;
+  }
+
+  .video.section {
+    display: none; /* Hide the video in mobile view */
+  }
+
 }
 
 .waves-section {
@@ -184,17 +218,6 @@
   position: relative;
 }
 
-.boat-image {
-  height: 30rem;
-  width: 40rem;
-  z-index: 10;
-  margin-top: -4rem;
-  position: absolute;
-  left: 0px;
-  top: 7rem;
-  animation: animate-boat 15s linear infinite;
-  user-select: none;
-}
 
 @media (min-width: 1300px) {
   .boat-image {
@@ -207,8 +230,15 @@
     height: 30rem;
     width: 30rem;
     top: 10rem;
-    animation: animate-boat 5s linear infinite; /* Adjust the duration (3s) as needed */
+    animation: animate-boat 5s linear infinite; /*Adjust the duration (3s) as needed*/
   }
+
+  /* .waves-section {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+  } */
 
   @keyframes animate-boat {
     0% {
