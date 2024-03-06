@@ -13,6 +13,13 @@
   width: 22rem;
 }
 
+@media (max-width: 768px) {
+  .about-logo-image {
+    height: 20rem;
+    width: 20rem;
+  }
+}
+
 .about-text-section {
   background-color: #d3d3d3;
   display: flex;

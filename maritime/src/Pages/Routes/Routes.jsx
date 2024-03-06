@@ -647,7 +647,7 @@ function Routes() {
         },
         headers: {
           accept: "application/json",
-          "x-api-key": "nirontDGPFBmQJYrSAtZ6NgqZOt20cy7ReufSPM3",
+          "x-api-key": "XJwOrbZMI26F7kT7hLgKo6AV7I3SWfm91CmiuWkH",
         },
       };
 
@@ -828,7 +828,7 @@ function Routes() {
             <p className="result" onClick={fetchRouteDetails}>
               Go
             </p>
-            <div className="get-results"></div>
+            <div className="get-results" onClick={fetchRouteDetails}></div>
             <div className="bot-routes-section">
               <Bot />
             </div>

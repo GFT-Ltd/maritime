@@ -197,7 +197,7 @@
     border-left: 8rem solid #ffffff;
     border-bottom: 4rem solid transparent;
     position: absolute;
-    top: 73%;
+    top: 80%;
     left: 10%;
     transform: translateY(-50%, -50%);
   }
@@ -220,7 +220,7 @@
 
 @media (max-width: 600px) {
   .result {
-    top: 79%;
+    top: 87%;
   }
 }
 
