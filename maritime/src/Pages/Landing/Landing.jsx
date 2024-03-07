@@ -6,15 +6,14 @@ import Navbar from "../Components/Navbar/Navbar.jsx";
 import Footer from "../Components/Footer/Footer.jsx";
 import videoBg from "../../Assets/101.mp4";
 
-
 function Landing() {
   return (
     <>
       <div className="landing-page">
         <div className="waves-section">
+          <Navbar />
           <div className="boat-section">
             <div className="title-section bg-red-300">
-              <Navbar />
               <Title />
             </div>
             <div className="video section">
