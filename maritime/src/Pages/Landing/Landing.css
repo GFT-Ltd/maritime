@@ -231,6 +231,7 @@ video {
 .services-list {
   padding-top: 5%;
   text-align: left;
+  margin-left: 8rem;
   /* text-align: center; */
   letter-spacing: 0.1rem;
 }
@@ -268,10 +269,13 @@ video {
 }
 
 .action-card {
-  --bg: #f7f7f8;
-  --hover-bg: #e5fcff;
+  --bg: #fee7b4;
+  --hover-bg: #facd6c;
   --hover-text: black;
-  max-width: 23ch;
+  margin-top: -3rem;
+  margin-left: 8rem;
+  width: 25rem;
+  height: 18rem;
   text-align: center;
   background: var(--bg);
   padding: 1.5em;
@@ -340,9 +344,9 @@ video {
   padding: 5%;
   margin: auto;
 }
-.action-card {
+/* .action-card {
   margin: auto;
-}
+} */
 
 @media (max-width: 600px) {
   .action-card {
