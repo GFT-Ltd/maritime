@@ -118,6 +118,7 @@
   padding: 0;
   background-size: 1600px 700px;
   /* background-repeat: no-repeat; */
+  overflow: hidden;
 }
 
 video {
@@ -222,32 +223,39 @@ video {
 .services-section {
   margin-top: 2rem;
   background-color: #e1e1e4;
-  height: 65vh;
+  height: 65%;
   text-align: center;
   padding: 2%;
   padding-top: 4%;
+  padding-bottom: 4%;
 }
 
 .services-list {
   padding-top: 5%;
   text-align: left;
-  margin-left: 8rem;
-  /* text-align: center; */
+  /* margin-left: 8rem; */
+  text-align: center;
   letter-spacing: 0.1rem;
 }
 
-.services-list li {
-  margin: 2%;
+.list-block {
+  /* margin: 2%; */
+  text-align: center;
+}
+
+.list-items {
+  display: inline-block;
+  text-align: left;
 }
 
 @media (max-width: 600px) {
   .services-section {
     margin-top: 2rem;
-    background-color: #222222;
-    height: 65vh;
-    color: white;
+    background-color: #e1e1e4;
+    height: 65%;
     text-align: center;
     padding: 2%;
+    padding-top: 8%;
   }
 
   .services-list {
@@ -257,14 +265,14 @@ video {
     letter-spacing: 0.2rem;
   }
   .services-list li {
-    margin: 4%;
+    margin-top: 4%;
   }
 }
 
 .action-button-section {
   margin-top: 2rem;
   background-color: #fff;
-  height: 60vh;
+  height: 60%;
   padding: 2%;
 }
 
@@ -273,9 +281,9 @@ video {
   --hover-bg: #facd6c;
   --hover-text: black;
   margin-top: -3rem;
-  margin-left: 8rem;
-  width: 25rem;
-  height: 18rem;
+  /* margin-left: 5rem; */
+  width: 20rem;
+  height: 15rem;
   text-align: center;
   background: var(--bg);
   padding: 1.5em;
@@ -290,6 +298,32 @@ video {
   align-items: center;
   gap: 1em;
   cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .action-card {
+    --bg: #fee7b4;
+    --hover-bg: #facd6c;
+    --hover-text: black;
+    margin-top: -3rem;
+    /* margin-left: 5rem; */
+    width: 15rem;
+    height: 10rem;
+    text-align: center;
+    background: var(--bg);
+    padding: 1.5em;
+    padding-block: 1.8em;
+    border-radius: 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s cubic-bezier(0.6, 0.4, 0, 1), transform 0.15s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    cursor: pointer;
+  }
 }
 
 .action-card__body {
@@ -337,7 +371,7 @@ video {
   opacity: 0;
 }
 
-.action-cards {
+.action-cards .cards-div {
   display: flex;
   text-align: center;
   justify-content: center;

@@ -32,12 +32,15 @@ function Landing() {
           <div>
             <h1>Our Services</h1>
             <div className="row services-list">
-              <div className="col-lg-6 col-md-6 col-12">
+              <div className="col-lg-6 col-md-6 col-12 list-block">
+                <ul className="list-items">
                 <li>Route: Optimize journeys with detailed tracking.</li>
                 <li>Freight: Access cargo details and shipping costs.</li>
                 <li>Weather: Stay informed with route-specific forecasts.</li>
+                </ul>
               </div>
-              <div className="col-lg-6 col-md-6 col-12">
+              <div className="col-lg-6 col-md-6 col-12 list-block">
+              <ul className="list-items">
                 <li>
                   Vessel Tracking: Real-time location monitoring for vessels.
                 </li>
@@ -45,13 +48,14 @@ function Landing() {
                   Shipping Details: Explore companies, and shipping insights.
                 </li>
                 <li>Career Services: Job assistance, and talent matching.</li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
         <div className="action-button-section">
           <div className="row action-cards">
-            <div className="col-lg-6 col-md-6 col-12">
+            <div className="col-lg-6 col-md-6 col-12 cards-div">
               <div className="action-card" onClick={goToServices}>
                 <div className="icon"></div>
                 <strong> Services</strong>
@@ -61,7 +65,7 @@ function Landing() {
                 <span>Go to services</span>
               </div>
             </div>
-            <div className="col-lg-6 col-md-6 col-12">
+            <div className="col-lg-6 col-md-6 col-12 cards-div">
               <div className="action-card">
                 <div className="icon"></div>
                 <strong>Careers</strong>
