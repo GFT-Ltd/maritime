@@ -273,8 +273,9 @@
   box-shadow: 0px 0px 15px 0px #7ef9ffbf;
   text-decoration: none;
   transition-duration: 0.1s;
-  border-color: #7ef9ffbf;
+  border-color: #fff;
   border-radius: 1px;
+  color: white;
 }
 
 .button-4:disabled {
@@ -325,18 +326,18 @@
 .right-container {
   height: 100vh;
   /* background-color: #9a8c98; */
-  background-color: #b5b5b5;
+  background-color: #0092ca;
 }
 
 .data-container {
   /* background-color: #9a8c98; */
   height: 100vh;
-  background-color: #b5b5b5;
+  background-color: #0092ca;
 }
 
 .bot-container {
   height: 20vh;
-  background-color: #b5b5b5;
+  background-color: #0092ca;
 }
 
 .data-heading {
@@ -358,7 +359,7 @@
   padding: 3%;
   height: 18.6rem;
   width: 21.5rem;
-  background-color: #f2e9e4;
+  background-color: #fff;
   border-radius: 1rem;
 }
 

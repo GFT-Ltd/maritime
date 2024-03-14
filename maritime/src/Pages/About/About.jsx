@@ -17,13 +17,19 @@ function About() {
           <div className="col-lg-7 col-md-6 col-12 about-text-section">
             <p className="about-text">
               At Great Future Technologies Ltd., we're on a mission to
-              revolutionize the maritime and cargo transportation industry. With
-              a focus on tailored solutions and advanced technologies, we
-              prioritize efficient and reliable goods transportation. Our
-              commitment includes optimizing route planning, enhancing cost
-              efficiency, refining decision-making processes, and relentlessly
-              pursuing cutting-edge solutions. Join us in this transformative
-              journey as we redefine excellence in maritime solutions.
+              revolutionize the maritime and cargo transportation industry.
+              <br></br>
+              <br></br>
+              <p className="Priorities">OUR PRIORITIES:</p>
+              <ul>
+                <li>Efficient and reliable goods transportation.</li>
+                <br></br>
+                <li>Optimizing route planning.</li>
+                <br></br>
+                <li>Enhancing cost efficiency.</li>
+                <br></br>
+                <li>Refining decision-making processes.</li>
+              </ul>
             </p>
           </div>
         </div>

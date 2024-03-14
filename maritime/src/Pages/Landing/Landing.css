@@ -222,7 +222,7 @@ video {
 
 .services-section {
   margin-top: 2rem;
-  background-color: #e1e1e4;
+  background-color: #d5eeff;
   height: 65%;
   text-align: center;
   padding: 2%;
@@ -277,9 +277,9 @@ video {
 }
 
 .action-card {
-  --bg: #fee7b4;
-  --hover-bg: #facd6c;
-  --hover-text: black;
+  --bg: #93deff;
+  --hover-bg: #0092ca;
+  --hover-text: white;
   margin-top: -3rem;
   /* margin-left: 5rem; */
   width: 20rem;
