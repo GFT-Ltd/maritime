@@ -696,6 +696,9 @@ import "./Weather.css";
 import Calendar from "../Components/Calender/Calendar";
 import HistoryGraph from "../Components/HistoryGraph/HistoryGraph";
 import HistoryMapModal from "../Components/MapModal/HistoryMapModal";
+import WeatherRoute from "./WeatherRoute/WeatherRoute";
+import axios from "axios";
+import RouteDetails from "../Routes/RouteDetails/RouteDetails";
 
 function Weather() {
   const [showMapModal, setShowMapModal] = useState(false);
@@ -706,6 +709,15 @@ function Weather() {
   const [locationQuery, setLocationQuery] = useState("");
   const [isForecastLoading, setIsForecastLoading] = useState(false);
   const [isHistoryLoading, setIsHistoryLoading] = useState(false);
+
+  const [sourceQuery, setSourceQuery] = useState("");
+  const [destinationQuery, setDestinationQuery] = useState("");
+  const [sourceCoordinates, setSourceCoordinates] = useState(null);
+  const [destinationCoordinates, setDestinationCoordinates] = useState(null);
+
+  const [routeWeatherDetails, setRouteWeatherDetails] = useState(null);
+  const [isWeatherRouteLoading, setIsWeatherRouteLoading] = useState(false);
+  const [coordinateHops, setCoordinateHops] = useState(20);
 
   const openMapModal = () => {
     setShowMapModal(true);
@@ -748,6 +760,141 @@ function Weather() {
     fetchCoordinatesForLocation(locationQuery, fetchForecastWeatherData);
   };
 
+  const handleSourceQueryChange = (event) => {
+    setSourceQuery(event.target.value);
+  };
+
+  const handleDestinationQueryChange = (event) => {
+    setDestinationQuery(event.target.value);
+  };
+
+  const apiUrl = "https://nominatim.openstreetmap.org/search?format=json&q=";
+
+  const fetchCoordinatesForRoutes = async (query, setter) => {
+    try {
+      const response = await fetch(apiUrl + encodeURIComponent(query));
+      const data = await response.json();
+      if (data.length > 0) {
+        setter({ lat: data[0].lat, lon: data[0].lon });
+      } else {
+        setter(null);
+      }
+    } catch (error) {
+      console.error("Error fetching coordinates:", error);
+    }
+  };
+
+  const handleRouteWeatherButtonClick = async () => {
+    await fetchCoordinatesForRoutes(sourceQuery, setSourceCoordinates);
+    await fetchCoordinatesForRoutes(
+      destinationQuery,
+      setDestinationCoordinates
+    );
+    // fetchRouteDetails();
+  };
+
+  useEffect(() => {
+    if (sourceCoordinates && destinationCoordinates) {
+      setIsWeatherRouteLoading(true);
+      fetchRouteDetails();
+    }
+  }, [sourceCoordinates, destinationCoordinates]);
+
+  // const fetchRouteDetails = () => {
+  //   console.log("funciton is working.")
+  //   if (sourceCoordinates && destinationCoordinates) {
+  //     console.log("Source : ",sourceCoordinates, " and Destination : ", destinationCoordinates)
+  //     const sourceCoords = `${sourceCoordinates.lat},${sourceCoordinates.lon}`;
+  //     const destCoords = `${destinationCoordinates.lat},${destinationCoordinates.lon}`;
+  //     const options = {
+  //       method: "GET",
+  //       url: `https://api.searoutes.com/route/v2/sea/${sourceCoords};${destCoords}/plan`,
+  //       params: {
+  //         continuousCoordinates: "true",
+  //         allowIceAreas: "false",
+  //         avoidHRA: "false",
+  //         avoidSeca: "false",
+  //       },
+  //       headers: {
+  //         accept: "application/json",
+  //         "x-api-key": "u3G8bJqHIX5GgCZaItCIZ7FBOmSqKire8Ml4SUgJ",
+  //       },
+  //     };
+
+  //     axios
+  //       .request(options)
+  //       .then(function (response) {
+  //         setRouteWeatherDetails(response.data);
+  //       })
+  //       .catch(function (error) {
+  //         console.error(error);
+  //       });
+  //   }
+  // };
+
+  const fetchRouteDetails = () => {
+    if (sourceCoordinates && destinationCoordinates) {
+      const sourceLat = parseFloat(sourceCoordinates.lat);
+      const sourceLon = parseFloat(sourceCoordinates.lon);
+      const destLat = parseFloat(destinationCoordinates.lat);
+      const destLon = parseFloat(destinationCoordinates.lon);
+
+      // Validate latitude values
+      if (
+        isNaN(sourceLat) ||
+        isNaN(destLat) ||
+        sourceLat < -90 ||
+        sourceLat > 90 ||
+        destLat < -90 ||
+        destLat > 90
+      ) {
+        console.error("Invalid latitude value");
+        return;
+      }
+
+      // Validate longitude values
+      if (
+        isNaN(sourceLon) ||
+        isNaN(destLon) ||
+        sourceLon < -180 ||
+        sourceLon > 180 ||
+        destLon < -180 ||
+        destLon > 180
+      ) {
+        console.error("Invalid longitude value");
+        return;
+      }
+
+      const sourceCoords = `${sourceLon},${sourceLat}`;
+      const destCoords = `${destLon},${destLat}`;
+      console.log("Weather : ", sourceCoords, " and : ", destCoords);
+      const options = {
+        method: "GET",
+        url: `https://api.searoutes.com/route/v2/sea/${sourceCoords};${destCoords}/plan`,
+        params: {
+          continuousCoordinates: "true",
+          allowIceAreas: "false",
+          avoidHRA: "false",
+          avoidSeca: "false",
+        },
+        headers: {
+          accept: "application/json",
+          "x-api-key": "BF4az3YuMM5KTvm80keun5zsrWNtTBxs4RIRINx9",
+        },
+      };
+
+      axios
+        .request(options)
+        .then(function (response) {
+          setRouteWeatherDetails(response.data);
+          setIsWeatherRouteLoading(false);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    }
+  };
+
   const fetchCoordinatesForLocation = (query, callback) => {
     const apiUrl = `https://nominatim.openstreetmap.org/search?format=json&q=${query}`;
 
@@ -783,8 +930,10 @@ function Weather() {
   }, [weatherHistoryData]);
 
   const fetchWeatherHistoryData = (latitude, longitude) => {
+    // setIsWeatherRouteLoading(true);
     setIsHistoryLoading(true);
-    setForecastWeatherData(null); // Reset forecast data
+    setForecastWeatherData(null);
+    setRouteWeatherDetails(null);
 
     const endDate = new Date();
     const startDate = new Date();
@@ -793,7 +942,7 @@ function Weather() {
     const formattedStartDate = startDate.toISOString().split("T")[0];
     const formattedEndDate = endDate.toISOString().split("T")[0];
 
-    const apiKey = "526e6cf6febd4002943183548242202";
+    const apiKey = "e8e630783de24be59cc104030242603";
     const apiUrl = `http://api.worldweatheronline.com/premium/v1/past-marine.ashx?key=${apiKey}&format=json&q=${latitude},${longitude}&date=${formattedStartDate}&enddate=${formattedEndDate}`;
 
     fetch(apiUrl)
@@ -811,8 +960,10 @@ function Weather() {
 
   const fetchForecastWeatherData = (latitude, longitude) => {
     setIsForecastLoading(true);
+    // setIsWeatherRouteLoading(true);
+    setRouteWeatherDetails(null);
 
-    const apiKey = "526e6cf6febd4002943183548242202";
+    const apiKey = "e8e630783de24be59cc104030242603";
     const apiUrl = `http://api.worldweatheronline.com/premium/v1/marine.ashx?key=${apiKey}&format=json&q=${latitude},${longitude}`;
 
     fetch(apiUrl)
@@ -834,24 +985,43 @@ function Weather() {
       <div className="weather-section">
         <div className="row">
           <div className="col-lg-4 col-md-4 col-sm-12 col-12 input-section">
-            <div className="container history-weather">
-              <div className="box">
-                <span className="title">Weather History</span>
+            <div className="container route-weather">
+              <div className="box route-box">
+                <span className="title">Weather for Route</span>
                 <div className="input-div">
                   <input
-                    placeholder="Enter Location"
-                    className="weather-input-box"
-                    value={locationQuery}
-                    onChange={handleLocationQueryChange}
+                    placeholder="Enter Source"
+                    className="route-weather-input-box"
+                    value={sourceQuery}
+                    onChange={handleSourceQueryChange}
+                  />
+                  <input
+                    placeholder="Enter Destination"
+                    className="route-weather-input-box"
+                    value={destinationQuery}
+                    onChange={handleDestinationQueryChange}
                   />
                   <div className="map-result-div">
-                    <div className="map-icon" onClick={openHistoryMapModal}>
-                      <FaMapMarkedAlt />
+                    <div className="coordinate-hops">
+                      <input
+                        type="number"
+                        className="form-control form-control-sm input-box-hops" // Bootstrap class for small input
+                        value={coordinateHops} // Set the initial value here
+                        min="0" // Set minimum value
+                        max="20" // Set maximum value
+                        onChange={(e) => {
+                          const value = Math.min(
+                            20,
+                            Math.max(0, parseInt(e.target.value))
+                          ); // Ensure value is between 0 and 20
+                          setCoordinateHops(isNaN(value) ? 0 : value); // Update coordinateHops state on change
+                        }}
+                      />
                     </div>
                     <button
                       className="button-8"
                       role="button"
-                      onClick={handleWeatherHistoryButtonClick}
+                      onClick={handleRouteWeatherButtonClick}
                     >
                       Get Result
                     </button>
@@ -877,6 +1047,31 @@ function Weather() {
                       className="button-8"
                       role="button"
                       onClick={handleForecastWeatherButtonClick}
+                    >
+                      Get Result
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="container history-weather">
+              <div className="box">
+                <span className="title">Weather History</span>
+                <div className="input-div">
+                  <input
+                    placeholder="Enter Location"
+                    className="weather-input-box"
+                    value={locationQuery}
+                    onChange={handleLocationQueryChange}
+                  />
+                  <div className="map-result-div">
+                    <div className="map-icon" onClick={openHistoryMapModal}>
+                      <FaMapMarkedAlt />
+                    </div>
+                    <button
+                      className="button-8"
+                      role="button"
+                      onClick={handleWeatherHistoryButtonClick}
                     >
                       Get Result
                     </button>
@@ -942,6 +1137,21 @@ function Weather() {
                   ) : null}
                   {forecastWeatherData && !isHistoryLoading ? (
                     <Calendar forecastData={forecastWeatherData} />
+                  ) : null}
+                </>
+              )}
+              {console.log(isWeatherRouteLoading)}
+              {isWeatherRouteLoading ? (
+                <div className="loading-icon">
+                  <i className="fa fa-spinner fa-spin"></i> Loading...
+                </div>
+              ) : (
+                <>
+                  {routeWeatherDetails ? (
+                    <WeatherRoute
+                      routeWeatherDetails={routeWeatherDetails}
+                      coordinateHops={coordinateHops}
+                    />
                   ) : null}
                 </>
               )}

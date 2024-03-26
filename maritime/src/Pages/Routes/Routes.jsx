@@ -635,7 +635,7 @@ function Routes() {
     if (selectedSourcePort && selectedDestinationPort) {
       const sourceCoordinates = `${portsData[selectedSourcePort].coordinates[0]},${portsData[selectedSourcePort].coordinates[1]}`;
       const destinationCoordinates = `${portsData[selectedDestinationPort].coordinates[0]},${portsData[selectedDestinationPort].coordinates[1]}`;
-
+      // console.log("Routes : ",sourceCoordinates , "and : ", destinationCoordinates)
       const options = {
         method: "GET",
         url: `https://api.searoutes.com/route/v2/sea/${sourceCoordinates};${destinationCoordinates}/plan`,
@@ -647,7 +647,7 @@ function Routes() {
         },
         headers: {
           accept: "application/json",
-          "x-api-key": "LjVvnMS9hV6XOot3VJPRY8qAU0BKkhD73LeoekvZ",
+          "x-api-key": "BF4az3YuMM5KTvm80keun5zsrWNtTBxs4RIRINx9",
         },
       };
 

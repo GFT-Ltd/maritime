@@ -1,0 +1,10 @@
+.title-text {
+  background-color: white;
+  color: black;
+  padding: 0;
+  text-transform: capitalize;
+}
+
+.weatherRoute-modal-content {
+  padding: 1rem;
+}

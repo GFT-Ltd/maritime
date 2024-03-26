@@ -1,0 +1,10 @@
+.date-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.select-date-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

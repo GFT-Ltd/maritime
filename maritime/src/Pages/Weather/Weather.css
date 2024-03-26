@@ -188,16 +188,51 @@
 
 .calender-section .red {
   background-color: #ff605c;
+  cursor: pointer;
 }
 
 .calender-section .yellow {
   background-color: #ffbd44;
+  cursor: pointer;
 }
 
 .calender-section .green {
   background-color: #00ca4e;
+  cursor: pointer;
 }
 
 .card__content {
   padding-left: 2%;
+}
+
+.route-weather-input-box {
+  width: 100%;
+  color: rgb(36, 35, 42);
+  font-size: 16px;
+  line-height: 20px;
+  min-height: 20px;
+  border-radius: 0.8rem;
+  padding: 5px 12px;
+  border: 2px solid transparent;
+  box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
+  background: rgb(251, 251, 251);
+  transition: all 0.1s ease 0s;
+  margin-bottom: 2%;
+  margin-top: 2%;
+}
+
+.route-box:hover {
+  width: 17rem;
+  height: 15rem;
+}
+
+.coordinate-hops {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.input-box-hops {
+  margin: 0.7rem 0;
+  cursor: pointer;
 }

@@ -256,6 +256,7 @@ const RouteMap = ({ coordinates }) => {
 
     // Swap longitude and latitude values in the coordinates array
     const swappedCoordinates = coordinates.map((coord) => [coord[1], coord[0]]);
+    console.log("Routes Swapped : ", swappedCoordinates);
 
     // Add the route as a vector layer
     const routeSource = new VectorSource({
