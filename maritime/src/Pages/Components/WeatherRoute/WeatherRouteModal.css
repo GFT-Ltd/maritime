@@ -1,3 +1,7 @@
+.route-map-modal {
+  overflow: hidden;
+}
+
 .title-text {
   background-color: white;
   color: black;
@@ -7,4 +11,32 @@
 
 .weatherRoute-modal-content {
   padding: 1rem;
+}
+
+.select-date-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.date-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@media (max-width: 600px) {
+  .date-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+}
+
+.route-weather-modal {
+  overflow: hidden;
+}
+
+.select-button {
+  background-color: blue;
 }

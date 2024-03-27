@@ -688,7 +688,7 @@
 
 // export default Weather;
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import NavbarTwo from "../Components/Navbar/NavbarTwo";
 import { FaMapMarkedAlt } from "react-icons/fa";
 import MapModal from "../Components/MapModal/MapModal";
@@ -699,6 +699,7 @@ import HistoryMapModal from "../Components/MapModal/HistoryMapModal";
 import WeatherRoute from "./WeatherRoute/WeatherRoute";
 import axios from "axios";
 import RouteDetails from "../Routes/RouteDetails/RouteDetails";
+import { IoInformationCircleOutline } from "react-icons/io5";
 
 function Weather() {
   const [showMapModal, setShowMapModal] = useState(false);
@@ -718,6 +719,7 @@ function Weather() {
   const [routeWeatherDetails, setRouteWeatherDetails] = useState(null);
   const [isWeatherRouteLoading, setIsWeatherRouteLoading] = useState(false);
   const [coordinateHops, setCoordinateHops] = useState(20);
+  const [showTooltip, setShowTooltip] = useState(false);
 
   const openMapModal = () => {
     setShowMapModal(true);
@@ -739,12 +741,16 @@ function Weather() {
 
   const handleCoordinatesCapture = (latitude, longitude) => {
     setCapturedCoordinates({ latitude, longitude });
+    setSourceQuery("");
+    setDestinationQuery("");
     fetchForecastWeatherData(latitude, longitude);
     // fetchWeatherHistoryData(latitude, longitude);
   };
 
   const handleHistoryCoordinatesCapture = (latitude, longitude) => {
     setCapturedCoordinates({ latitude, longitude });
+    setSourceQuery("");
+    setDestinationQuery("");
     fetchWeatherHistoryData(latitude, longitude);
   };
 
@@ -753,10 +759,14 @@ function Weather() {
   };
 
   const handleWeatherHistoryButtonClick = () => {
+    setSourceQuery("");
+    setDestinationQuery("");
     fetchCoordinatesForLocation(locationQuery, fetchWeatherHistoryData);
   };
 
   const handleForecastWeatherButtonClick = () => {
+    setSourceQuery("");
+    setDestinationQuery("");
     fetchCoordinatesForLocation(locationQuery, fetchForecastWeatherData);
   };
 
@@ -796,6 +806,7 @@ function Weather() {
   useEffect(() => {
     if (sourceCoordinates && destinationCoordinates) {
       setIsWeatherRouteLoading(true);
+      setCapturedCoordinates(null);
       fetchRouteDetails();
     }
   }, [sourceCoordinates, destinationCoordinates]);
@@ -879,7 +890,7 @@ function Weather() {
         },
         headers: {
           accept: "application/json",
-          "x-api-key": "BF4az3YuMM5KTvm80keun5zsrWNtTBxs4RIRINx9",
+          "x-api-key": "UvF8MQnh6S76z4JmHapk350Ig7vzUKgU6DbI0w6N",
         },
       };
 
@@ -888,6 +899,8 @@ function Weather() {
         .then(function (response) {
           setRouteWeatherDetails(response.data);
           setIsWeatherRouteLoading(false);
+          setForecastWeatherData(null);
+          setWeatherHistoryData(null);
         })
         .catch(function (error) {
           console.error(error);
@@ -962,6 +975,7 @@ function Weather() {
     setIsForecastLoading(true);
     // setIsWeatherRouteLoading(true);
     setRouteWeatherDetails(null);
+    setWeatherHistoryData(null);
 
     const apiKey = "e8e630783de24be59cc104030242603";
     const apiUrl = `http://api.worldweatheronline.com/premium/v1/marine.ashx?key=${apiKey}&format=json&q=${latitude},${longitude}`;
@@ -978,6 +992,41 @@ function Weather() {
         setIsForecastLoading(false);
       });
   };
+
+  // useEffect(() => {
+  //   // Enable Bootstrap tooltips
+  //   const tooltipTriggerList = [].slice.call(
+  //     document.querySelectorAll(
+  //       '.route-hop-info-button [data-bs-toggle="tooltip"]'
+  //     )
+  //   );
+  //   tooltipTriggerList.forEach((tooltipTriggerEl) => {
+  //     new window.bootstrap.Tooltip(tooltipTriggerEl);
+  //   });
+  // }, []);
+
+  useEffect(() => {
+    const tooltipTriggerList = document.querySelectorAll(
+      ".route-hop-info-button"
+    );
+    tooltipTriggerList.forEach((tooltipTriggerEl) => {
+      tooltipTriggerEl.addEventListener("click", () => {
+        const tooltip = new window.bootstrap.Tooltip(tooltipTriggerEl, {
+          placement: "bottom",
+          title:
+            "Segment the route by specifying a value to determine the gap between each point.",
+          customClass: "your-custom-tooltip-class", // Add your custom CSS class here
+        });
+        tooltip.show(); // Show the tooltip when clicked
+      });
+    });
+
+    return () => {
+      tooltipTriggerList.forEach((tooltipTriggerEl) => {
+        tooltipTriggerEl.removeEventListener("click");
+      });
+    };
+  }, []);
 
   return (
     <div>
@@ -1017,6 +1066,14 @@ function Weather() {
                           setCoordinateHops(isNaN(value) ? 0 : value); // Update coordinateHops state on change
                         }}
                       />
+                      <div className="route-hop-info-button">
+                        {/* <IoInformationCircleOutline
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="This is hops"
+                        /> */}
+                        <IoInformationCircleOutline data-bs-toggle="tooltip" />
+                      </div>
                     </div>
                     <button
                       className="button-8"
@@ -1098,6 +1155,13 @@ function Weather() {
                   <h6>
                     Coordinates are : {capturedCoordinates.latitude},{" "}
                     {capturedCoordinates.longitude}
+                  </h6>
+                )}
+                {sourceQuery && destinationQuery && (
+                  <h6>
+                    Weather along the route from : {sourceQuery.toUpperCase()}
+                    {" to "}
+                    {destinationQuery.toUpperCase()}
                   </h6>
                 )}
               </div>

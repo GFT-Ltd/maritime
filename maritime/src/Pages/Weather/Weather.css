@@ -19,9 +19,10 @@
 
 @media (max-width: 600px) {
   .input-section {
-    height: 60vh;
-    background-color: #44a9e4;
+    height: 100%;
+    background-color: #000000;
     /* background-color: #051923; */
+    padding-bottom: 5rem;
   }
 }
 
@@ -235,4 +236,27 @@
 .input-box-hops {
   margin: 0.7rem 0;
   cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .card__content {
+    padding: 0 2%;
+  }
+}
+
+.route-hop-info-button {
+  font-size: 1.2rem;
+  padding: 1rem 1rem 1rem 0.5rem;
+  cursor: pointer;
+}
+
+.your-custom-tooltip-class .tooltip-inner {
+  background-color: white;
+  color: black;
+  text-align: left;
+  width: 30rem;
+}
+
+.your-custom-tooltip-class .tooltip-arrow::before {
+  border-bottom-color: white !important;
 }
